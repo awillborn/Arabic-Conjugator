@@ -1,6 +1,6 @@
 require_relative 'form_initializer'
 
-Class FormI
+class FormI
 include FormInitializer
 
   def conjugate
@@ -9,7 +9,7 @@ include FormInitializer
     elsif @tense == "present"
       present
     else #tense == masdar
-      "ال" + @root1 + @root2 + @root3
+      "ال" + three_roots
     end
   end
 
@@ -21,7 +21,7 @@ include FormInitializer
     elsif @root2 == @root3
       doubled_past
     else
-      @root1 + @root2 + @root3 + @past_pronouns[@pronoun]
+      three_roots + @past_pronouns[@pronoun]
     end
   end
 
@@ -31,7 +31,7 @@ include FormInitializer
     elsif @root2 == @root3
       doubled_present
     else
-      @present_pronouns[@pronoun][0] + @root1 + @root2 + @root3 + @present_pronouns[@pronoun][1]
+      @present_pronouns[@pronoun][0] + three_roots + @present_pronouns[@pronoun][1]
     end
   end
 
@@ -44,7 +44,7 @@ include FormInitializer
     elsif @pronoun == :they || @pronoun == :she
       @root1 + @root2 + @past_pronouns[@pronoun]
     else
-      @root1 + @root2 + @root3 + @past_pronouns[@pronoun]
+      three_roots + @past_pronouns[@pronoun]
     end
   end
 
