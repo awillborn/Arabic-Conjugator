@@ -2,46 +2,28 @@ require_relative 'form_initializer'
 
 class FormVIII < FormInitializer
 
-  def initialize(root1, root2, root3, tense, pronoun)
+  def initialize(root1, root2, root3, tense, pronoun = nil)
     super
     @base = "ا" + @root1 + "ت" + @root2 + @root3
     @masdar = "الا" + @root1 + "ت" + @root2 + "ا" + @root3
   end
 
+  def present
+    @base = @root1 + "ت" + @root2 + @root3
+    super
+  end
 
-  # def present
-  #   if @root1 == "و" || @root1 == "ي"
-  #     @present_pronouns[@pronoun][0] + "ت" + @root2 + @root3 + @present_pronouns[@pronoun][1]
-  #   else
-  #     @present_pronouns[@pronoun][0] + @root1 + "ت" + @root2 + @root3 + @present_pronouns[@pronoun][1]
-  #   end
-  # end
+  def hollow_past
+    @root2 = "ا"
+    @base = @root1 + @root2 + @root3
+    super
+  end
 
-  # def defective_past
-  #   if @pronoun == :he
-  #     "ا" + @root1 + "ت" + @root2 + "ى"
-  #   else
-  #     "ا" + @root1 + "ت" + @root2 + "ي" + @past_pronouns[@pronoun]
-  #   end
-  # end
-
-  # def defective_present
-  #   if
-  #   else
-
-  #   end
-  # end
-
-
-  # def hollow_past
-  #   if [:he, :she, :they].include?(@pronoun)
-  #     "ا" + @root1 + "تا" + @root3 + @past_pronouns[@pronoun]
-  #   else
-  #     "ا" + @root1 + "ت" + @root3 + @past_pronouns[@pronoun]
-  #   end
-  # end
-
-  # #form VIII hollow present
+  def hollow_present
+    @root2 = "ا"
+    @base = @root1 + "ت" + @root2 + @root3
+    super
+  end
 
   # def weak_past
   # end
@@ -50,3 +32,6 @@ class FormVIII < FormInitializer
   # end
 
 end
+
+formVIII = FormVIII.new("خ", "ي", "ر", "present", :we)
+p formVIII.conjugate

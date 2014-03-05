@@ -2,27 +2,19 @@ require_relative 'form_initializer'
 
 class FormV < FormInitializer
 
-  def initialize(root1, root2, root3, tense, pronoun)
+  def initialize(root1, root2, root3, tense, pronoun = nil)
     super
     @base = "ت" + @root1 + @root2 + @root3
     @masdar = "ال" + @base
   end
 
-  # def defective_past
-  #   if @pronoun == :he
-  #     "ت" + @root1 + @root2 + "ى"
-  #   else
-  #     "ت" + @root1 + @root2 + "ي" + @past_pronouns[@pronoun]
-  #   end
-  # end
 
-  # def defective_present
-  # end
-
-  #form V hollow past is regular
-  #form V hollow present is regular
-  #form V weak past is regular
-  #form V weak present is regular
-
+  def defective_present #form 5
+    @root3 = "ى"
+    super
+  end
 
 end
+
+formV = FormV.new("ك", "و", "ن", "present", :they)
+p formV.conjugate
