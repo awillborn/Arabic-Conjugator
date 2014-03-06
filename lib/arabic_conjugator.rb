@@ -1,3 +1,5 @@
+#encoding: utf-8
+#
 #Actual Exceptions:
 # A small number of hollow verbs that conjugate with alif as the middle letter in the present tense (e.g. 'to be scared')
 # Small number of defective verbs that conjugate with alif maksura as last letter in the present tense (e.g. 'to forget')

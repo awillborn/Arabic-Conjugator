@@ -1,3 +1,4 @@
+#encoding: utf-8
 require_relative 'form_initializer'
 
 class FormIV < FormInitializer
