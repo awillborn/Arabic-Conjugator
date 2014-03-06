@@ -8,15 +8,16 @@ class FormI < FormInitializer
     @masdar = "ال" + @base
   end
 
-  def defective_past # form 1 - different from other forms
+  def defective_past
+    @base = @base[0...-1]
     if @root3 == "و" && @pronoun == :he
-      #(base minus root3) + "ا"
+      @base + "ا"
     elsif @root3 == "ي" && @pronoun == :he
-      #(base minus root3) + "ى"
+      @base + "ى"
     elsif @pronoun == :they || @pronoun == :she
-      #(base minus root3) + @past_pronouns[@pronoun]
+      @base + PAST_PRONOUNS[@pronoun]
     else
-      @base + @past_pronouns[@pronoun]
+      @base + PAST_PRONOUNS[@pronoun]
     end
   end
 
@@ -30,5 +31,3 @@ end
 
 formI = FormI.new("ك", "ت", "ب", "past", :they)
 p formI.conjugate
-formI2 = FormI.new("ك", "ت", "ب", "masdar", :they)
-p formI2.conjugate

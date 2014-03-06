@@ -15,8 +15,13 @@ class FormX < FormInitializer
 
   def hollow_past
     @root2 = "ا"
-    @base = @root1 + @root2 + @root3
-    super
+    @base = "است" + @root1 + @root2 + @root3
+    if [:he, :she, :they].include?(@pronoun)
+      @base + PAST_PRONOUNS[@pronoun]
+    else
+      @base = "است" + @root1 + @root3
+      @base + PAST_PRONOUNS[@pronoun]
+    end
   end
 
   # def form_X_defective_present

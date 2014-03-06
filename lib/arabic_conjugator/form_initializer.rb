@@ -1,3 +1,6 @@
+PAST_PRONOUNS = { :I => "ت", :you => "ت", :she => "ت" , :he =>'', :we => "نا", :you_pl => "تم", :they => "وا" }
+PRESENT_PRONOUNS = { :I => ["أ", ''], :you_m => ["ت", ''], :you_f => ["ت", "ين"], :he => ["ي", ""], :she => ["ت", ""], :we => ["ن", ''], :you_pl => ["ت", "ون"], :they => ["ي", "ون"] }
+
 class FormInitializer
   def initialize(root1, root2, root3, tense, pronoun = nil)
     @root1 = root1
@@ -5,8 +8,6 @@ class FormInitializer
     @root3 = root3
     @tense = tense
     @pronoun = pronoun
-    @past_pronouns = { :I => "ت", :you => "ت", :she => "ت" , :he =>'', :we => "نا", :you_pl => "تم", :they => "وا" }
-    @present_pronouns = { :I => ["أ", ''], :you_m => ["ت", ''], :you_f => ["ت", "ين"], :he => ["ي", ""], :she => ["ت", ""], :we => ["ن", ''], :you_pl => ["ت", "ون"], :they => ["ي", "ون"] }
   end
 
   def conjugate
@@ -27,7 +28,7 @@ class FormInitializer
     elsif @root2 == @root3
       doubled_past
     else
-      @base + @past_pronouns[@pronoun]
+      @base + PAST_PRONOUNS[@pronoun]
     end
   end
 
@@ -39,52 +40,54 @@ class FormInitializer
     elsif @root2 == "و" || @root2 == "ي"
       hollow_present
     else
-      @present_pronouns[@pronoun][0] + @base + @present_pronouns[@pronoun][1]
+      PRESENT_PRONOUNS[@pronoun][0] + @base + PRESENT_PRONOUNS[@pronoun][1]
     end
   end
 
   def defective_past #form 2, 3, 4, 5, 6, 7, 8, 10
+    @base = @base[0...-1]
     if @pronoun == :he
-      #(base minus root3) + "ى"
+      @base + "ى"
     elsif [:she, :they].include?(@pronoun)
-      #(base minus root3) + @past_pronouns[@pronoun]
+      @base + PAST_PRONOUNS[@pronoun]
     else
-      #(base minus root3) + "ي" + @past_pronouns[@pronoun]
+      @base + "ي" + PAST_PRONOUNS[@pronoun]
     end
   end
 
   def defective_present #form 1, 2, 3, 4, 7, 8, 10
     if [:you_f, :you_pl, :they].include?(@pronoun)
-      @present_pronouns[@pronoun][0]  #(base - root3) + @present_pronouns[@pronoun][1]
+      PRESENT_PRONOUNS[@pronoun][0]  #(base - root3) + PRESENT_PRONOUNS[@pronoun][1]
     else
-      @present_pronouns[@pronoun][0] + @base + @present_pronouns[@pronoun][1]
+      PRESENT_PRONOUNS[@pronoun][0] + @base + PRESENT_PRONOUNS[@pronoun][1]
     end
   end
 
   def hollow_past #root2 changed in 1, 4, 7, 8, 10
     if [:he, :she, :they].include?(@pronoun)
-      @base + @past_pronouns[@pronoun]
+      @base + PAST_PRONOUNS[@pronoun]
     else
-      #(base - root2) + @past_pronouns[@pronoun]
+      @base.delete!(@root2)
+      @base + PAST_PRONOUNS[@pronoun]
     end
   end
 
   def hollow_present #regular except for form VII and VIII
-    @present_pronouns[@pronoun][0] + @base + @present_pronouns[@pronoun][1]
+    PRESENT_PRONOUNS[@pronoun][0] + @base + PRESENT_PRONOUNS[@pronoun][1]
   end
 
   ###########
 
   def weak_present
-    @present_pronouns[@pronoun][0] + @root2 + @root3 + @present_pronouns[@pronoun][1]
+    PRESENT_PRONOUNS[@pronoun][0] + @root2 + @root3 + PRESENT_PRONOUNS[@pronoun][1]
   end
 
   def doubled_present
-    @present_pronouns[@pronoun][0] + @root1 + @root2 + "ّ" + @present_pronouns[@pronoun][1]
+    PRESENT_PRONOUNS[@pronoun][0] + @root1 + @root2 + "ّ" + PRESENT_PRONOUNS[@pronoun][1]
   end
 
   def doubled_past
-    @root1 + @root2 + "ّ" + @past_pronouns[@pronoun]
+    @root1 + @root2 + "ّ" + PAST_PRONOUNS[@pronoun]
   end
 
 end

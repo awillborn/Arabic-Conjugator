@@ -21,7 +21,7 @@ require 'arabic_conjugator/form_VIII'
 require 'arabic_conjugator/form_X'
 require 'arabic_conjugator/form_initializer'
 
-class ArabicConjugator
+module ArabicConjugator
 
   def initialize(root1, root2, root3, form, tense, pronoun)
     @root1 = root1
@@ -52,6 +52,7 @@ class ArabicConjugator
         FormVIII.new(@root1, @root2, @root3, @tense, @pronoun)
     when 10
         FormX.new(@root1, @root2, @root3, @tense, @pronoun)
+    end
   end
 
   def generate_parameters

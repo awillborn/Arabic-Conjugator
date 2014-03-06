@@ -4,7 +4,7 @@ class FormV < FormInitializer
 
   def initialize(root1, root2, root3, tense, pronoun = nil)
     super
-    @base = "ت" + @root1 + @root2 + @root3
+    @base = "ت" + @root1 + @root2 + "ّ" + @root3
     @masdar = "ال" + @base
   end
 

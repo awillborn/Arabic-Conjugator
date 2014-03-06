@@ -10,7 +10,7 @@ class FormIV < FormInitializer
 
   def hollow_past
     @root2 = "ا"
-    @base = @root1 + @root2 + @root3
+    @base = "أ" + @root1 + @root2 + @root3
     super
   end
 

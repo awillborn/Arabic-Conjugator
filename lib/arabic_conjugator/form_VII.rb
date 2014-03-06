@@ -15,8 +15,13 @@ class FormVII < FormInitializer
 
   def hollow_past
     @root2 = "ا"
-    @base = @root1 + @root2 + @root3
-    super
+    @base = "ان" + @root1 + @root2 + @root3
+    if [:he, :she, :they].include?(@pronoun)
+      @base + PAST_PRONOUNS[@pronoun]
+    else
+      @base = "ان" + @root1 + @root3
+      @base + PAST_PRONOUNS[@pronoun]
+    end
   end
 
   def hollow_present
