@@ -1,3 +1,4 @@
+#encoding: utf-8
 require_relative '../lib/arabic_conjugator'
 
 RSpec.configure do |config|
