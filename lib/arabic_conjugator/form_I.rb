@@ -28,6 +28,3 @@ class FormI < FormInitializer
   end
 
 end
-
-formI = FormI.new("ك", "ت", "ب", "past", :they)
-p formI.conjugate

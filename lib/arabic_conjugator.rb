@@ -55,20 +55,5 @@ module ArabicConjugator
     end
   end
 
-  def generate_parameters
-    arabic_letters = ["ب", "ث", "ج", "ح", "ق", "ل", "ك", "س", "ش", "خ", "ف", "و", "ي"]
-    forms = [1,2,3,4,5,6,7,8,10]
-    tenses = ["past", "present", "masdar"]
-    pronouns = [:I, :you_m, :you_f, :he, :she, :we, :you_pl, :they]
-    @root1 = arabic_letters.sample
-    arabic_letters.delete(root1)
-    @root2 = arabic_letters.sample
-    arabic_letters.delete(root2)
-    @root3 = arabic_letters.sample
-    @form = forms.sample
-    @tense = tenses.sample
-    @pronoun = pronouns.sample
-  end
-
 end
 

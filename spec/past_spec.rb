@@ -32,7 +32,7 @@ describe '#past' do
 
   context FormV do
     it 'conjugates formV correctly' do
-      verb = FormV.new("ع", "ر", "ف", "past", :you)
+      verb = FormV.new("ع", "ر", "ف", "past", :you_f)
       expect(verb.conjugate).to eq("تعرّفت")
     end
   end

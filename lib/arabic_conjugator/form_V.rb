@@ -15,6 +15,3 @@ class FormV < FormInitializer
   end
 
 end
-
-formV = FormV.new("ك", "و", "ن", "present", :they)
-p formV.conjugate

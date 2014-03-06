@@ -8,6 +8,11 @@ class FormIV < FormInitializer
     @masdar = "الإ" + @root1 + @root2 + "ا" + @root3
   end
 
+  def present
+    @base = @root1 + @root2 + @root3
+    super
+  end
+
   def hollow_past
     @root2 = "ا"
     @base = "أ" + @root1 + @root2 + @root3

@@ -24,8 +24,4 @@ class FormX < FormInitializer
     end
   end
 
-  # def form_X_defective_present
-  # end
-
-  # #form_X_hollow_present
 end

@@ -30,13 +30,4 @@ class FormVIII < FormInitializer
     super
   end
 
-  # def weak_past
-  # end
-
-  # def weak_present
-  # end
-
 end
-
-formVIII = FormVIII.new("خ", "ي", "ر", "present", :we)
-p formVIII.conjugate

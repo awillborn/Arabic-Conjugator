@@ -7,8 +7,4 @@ class FormIII < FormInitializer
     @base = @root1 + "ا" + @root2 + @root3
     @masdar = "الم" + @root1 + "ا" + @root2 + @root3 + "ة"
   end
-
 end
-
-formIII = FormIII.new("ك", "ت", "ب", "past", :they)
-p formIII.conjugate
