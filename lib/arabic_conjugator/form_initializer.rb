@@ -33,9 +33,7 @@ class FormInitializer
   end
 
   def present
-    if @root1 == "و" || @root1 == "ي"
-      weak_present
-    elsif @root2 == @root3
+    if @root2 == @root3
       doubled_present
     elsif @root2 == "و" || @root2 == "ي"
       hollow_present
@@ -78,16 +76,12 @@ class FormInitializer
 
   ###########
 
-  def weak_present
-    PRESENT_PRONOUNS[@pronoun][0] + @root2 + @root3 + PRESENT_PRONOUNS[@pronoun][1]
+  def doubled_past
+    @root1 + @root2 + "ّ" + PAST_PRONOUNS[@pronoun]
   end
 
   def doubled_present
     PRESENT_PRONOUNS[@pronoun][0] + @root1 + @root2 + "ّ" + PRESENT_PRONOUNS[@pronoun][1]
-  end
-
-  def doubled_past
-    @root1 + @root2 + "ّ" + PAST_PRONOUNS[@pronoun]
   end
 
 end

@@ -8,6 +8,18 @@ class FormI < FormInitializer
     @masdar = "ال" + @base
   end
 
+  def present
+    if @root1 == "و" || @root1 == "ي"
+      assimilated_present
+    else
+      super
+    end
+  end
+
+  def assimilated_present
+    PRESENT_PRONOUNS[@pronoun][0] + @root2 + @root3 + PRESENT_PRONOUNS[@pronoun][1]
+  end
+
   def defective_past
     @base = @base[0...-1]
     if @root3 == "و" && @pronoun == :he
