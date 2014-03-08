@@ -9,6 +9,8 @@
 # Add doubled verbs (wazan III doubled is v. rare but should include this anyway I guess)
 # deal with verbs with hamza as first root in present tense personal and past tense form IV (are there other cases where this matters?)
 
+#coding: UTF-8
+
 require "arabic_conjugator/version"
 require 'arabic_conjugator/form_I'
 require 'arabic_conjugator/form_II'
