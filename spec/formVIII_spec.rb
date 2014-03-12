@@ -18,6 +18,13 @@ describe FormVIII do
     end
   end
 
+  context "#hollow_past" do
+    it 'conjugates formVIII hollow past' do
+      verb = FormVIII.new("خ", "و", "ر", "past", :I)
+      expect(verb.conjugate).to eq("اخترت")
+    end
+  end
+
   context "#assimilated_past" do
     it 'conjugates formVIII assimilated past' do
       verb = FormVIII.new("و", "ف", "ق", "past", :they)

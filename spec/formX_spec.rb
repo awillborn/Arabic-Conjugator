@@ -24,6 +24,14 @@ describe FormX do
     end
   end
 
+  context "#hollow_past" do
+    it 'conjugates formX hollow past' do
+      verb = FormX.new("ع", "ي", "د", "past", :you_pl)
+      expect(verb.conjugate).to eq("استعدتم")
+    end
+  end
+
+
  context '#present' do
     it 'conjugates formX present' do
       verb = FormX.new("ك", "ش", "ف", "present", :you_pl)

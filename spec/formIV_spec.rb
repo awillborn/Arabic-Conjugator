@@ -18,6 +18,13 @@ describe FormIV do
     end
   end
 
+  context "#hollow_past" do
+    it 'conjugates formIV hollow past' do
+      verb = FormIV.new("ق", "و", "م", "past", :you_pl)
+      expect(verb.conjugate).to eq("أقمتم")
+    end
+  end
+
   context '#doubled_past' do
     xit 'conjugates formIV doubled past' do
       verb = FormIV.new("ض", "ر", "ر", "past", :he)
