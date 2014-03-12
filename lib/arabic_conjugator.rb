@@ -5,7 +5,6 @@
 
 # Changes to add:
 # figure out what to do about doubled verbs that are also hollow/defective/whatever
-# Add shaddas!!!
 # Add doubled verbs (wazan III doubled is v. rare but should include this anyway I guess)
 # deal with verbs with hamza as first root in present tense personal and past tense form IV (are there other cases where this matters?)
 
@@ -35,26 +34,8 @@ module ArabicConjugator
   end
 
   def conjugate
-    case @form
-    when 1
-        FormI.new(@root1, @root2, @root3, @tense, @pronoun)
-    when 2
-        FormII.new(@root1, @root2, @root3, @tense, @pronoun)
-    when 3
-        FormIII.new(@root1, @root2, @root3, @tense, @pronoun)
-    when 4
-        FormIV.new(@root1, @root2, @root3, @tense, @pronoun)
-    when 5
-        FormV.new(@root1, @root2, @root3, @tense, @pronoun)
-    when 6
-        FormVI.new(@root1, @root2, @root3, @tense, @pronoun)
-    when 7
-        FormVII.new(@root1, @root2, @root3, @tense, @pronoun)
-    when 8
-        FormVIII.new(@root1, @root2, @root3, @tense, @pronoun)
-    when 10
-        FormX.new(@root1, @root2, @root3, @tense, @pronoun)
-    end
+    form = FormFactory.new(@form, [@root1, @root2, @root3, @form, @tense, @pronoun]).create_form
+    form.conjugate
   end
 
 end

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require_relative 'form_initializer'
 
 class FormVIII < FormInitializer
@@ -8,21 +10,9 @@ class FormVIII < FormInitializer
     @masdar = "الا" + @root1 + "ت" + @root2 + "ا" + @root3
   end
 
-  def present
+  def regular_present
     @base = @root1 + "ت" + @root2 + @root3
-    if @root1 == "و" || @root1 == "ي"
-      assimilated_present
-    else
-      super
-    end
-  end
-
-  def past
-    if @root1 == "و" || @root1 == "ي"
-      assimilated_past
-    else
-      super
-    end
+    super
   end
 
   def hollow_past

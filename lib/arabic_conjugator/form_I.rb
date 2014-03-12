@@ -10,12 +10,8 @@ class FormI < FormInitializer
     @masdar = "ال" + @base
   end
 
-  def present
-    if @root1 == "و" || @root1 == "ي"
-      assimilated_present
-    else
-      super
-    end
+  def assimilated_past
+    regular_past
   end
 
   def assimilated_present

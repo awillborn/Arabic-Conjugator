@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require_relative 'form_initializer'
 
 class FormIV < FormInitializer
@@ -8,7 +10,7 @@ class FormIV < FormInitializer
     @masdar = "الإ" + @root1 + @root2 + "ا" + @root3
   end
 
-  def present
+  def regular_present
     @base = @root1 + @root2 + @root3
     super
   end
