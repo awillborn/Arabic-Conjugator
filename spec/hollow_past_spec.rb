@@ -1,13 +1,8 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe "#hollow_past" do
-
-  context FormI do
-    it 'conjugates formI correctly' do
-      verb = FormI.new("ق", "و", "ل", "past", :he)
-      expect(verb.conjugate).to eq("قال")
-    end
-  end
 
   context FormIV do
     it 'conjugates formIV correctly' do
