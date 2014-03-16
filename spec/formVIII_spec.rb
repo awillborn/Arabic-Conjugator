@@ -6,43 +6,43 @@ describe FormVIII do
 
   context "#past" do
     it 'conjugates formVIII past' do
-      verb = FormVIII.new("ك", "ش", "ف", "past", :I)
-      expect(verb.conjugate).to eq("اكتشفت")
+      conjugator = Conjugator.new("ك", "ش", "ف", "8", "past", :I)
+      expect(conjugator.conjugate).to eq("اكتشفت")
     end
   end
 
   context "#defective_past" do
     it 'conjugates formVIII defective past' do
-      verb = FormVIII.new("ب", "ل", "ي", "past", :I)
-      expect(verb.conjugate).to eq("ابتليت")
+      conjugator = Conjugator.new("ب", "ل", "ي", "8", "past", :I)
+      expect(conjugator.conjugate).to eq("ابتليت")
     end
   end
 
   context "#hollow_past" do
     it 'conjugates formVIII hollow past' do
-      verb = FormVIII.new("خ", "و", "ر", "past", :I)
-      expect(verb.conjugate).to eq("اخترت")
+      conjugator = Conjugator.new("خ", "و", "ر", "8", "past", :I)
+      expect(conjugator.conjugate).to eq("اخترت")
     end
   end
 
   context "#assimilated_past" do
     it 'conjugates formVIII assimilated past' do
-      verb = FormVIII.new("و", "ف", "ق", "past", :they)
-      expect(verb.conjugate).to eq("اتّفقوا")
+      conjugator = Conjugator.new("و", "ف", "ق", "8", "past", :they)
+      expect(conjugator.conjugate).to eq("اتّفقوا")
     end
   end
 
   context '#present' do
     it 'conjugates formVIII present' do
-      verb = FormVIII.new("ك", "ش", "ف", "present", :I)
-      expect(verb.conjugate).to eq("أكتشف")
+      conjugator = Conjugator.new("ك", "ش", "ف", "8", "present", :I)
+      expect(conjugator.conjugate).to eq("أكتشف")
     end
   end
 
   context '#assimilated_present' do
     it 'conjugates formVIII assimilated present' do
-      verb = FormVIII.new("و", "ف", "ق", "present", :they)
-      expect(verb.conjugate).to eq("يتّفقون")
+      conjugator = Conjugator.new("و", "ف", "ق", "8", "present", :they)
+      expect(conjugator.conjugate).to eq("يتّفقون")
     end
   end
 

@@ -1,10 +1,10 @@
 # encoding: utf-8
 
-require_relative 'form_initializer'
+require_relative 'form'
 
-class FormIV < FormInitializer
+class FormIV < Form
 
-  def initialize(root1, root2, root3, tense, pronoun = nil)
+  def initialize(root1, root2, root3, tense, pronoun, type)
     super
     @base = "أ" + @root1 + @root2 + @root3
     @masdar = "الإ" + @root1 + @root2 + "ا" + @root3
