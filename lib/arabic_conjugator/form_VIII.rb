@@ -8,6 +8,7 @@ class FormVIII < Form
     super
     @base = "ا" + @root1 + "ت" + @root2 + @root3
     @masdar = "الا" + @root1 + "ت" + @root2 + "ا" + @root3
+    @type = "assimilated" if assimilated?
   end
 
   def regular_present
@@ -38,6 +39,10 @@ class FormVIII < Form
 
   def assimilated_present
     PRESENT_PRONOUNS[@pronoun][0] + "تّ" + @root2 + @root3 + PRESENT_PRONOUNS[@pronoun][1]
+  end
+
+  def assimilated?
+    ["ظ", "ط", "ض", "ص", "ز", "ذ", "د", "ث", "ت"].include?(@root1)
   end
 
 end

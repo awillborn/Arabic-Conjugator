@@ -1,5 +1,3 @@
-# encoding: utf-8
-
 #Actual Exceptions:
 # A small number of hollow verbs that conjugate with alif as the middle letter in the present tense (e.g. 'to be scared')
 # Small number of defective verbs that conjugate with alif maksura as last letter in the present tense (e.g. 'to forget')
@@ -50,11 +48,4 @@ class Conjugator
 
 end
 
-conjugator = Conjugator.new("ك", "ت", "ب", "1", "past", :she)
-p conjugator.conjugate
-p conjugator.type
-p conjugator.root1
-p conjugator.root2
-p conjugator.root3
-p conjugator.root2 == conjugator.root3
 

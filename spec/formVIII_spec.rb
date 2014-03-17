@@ -26,9 +26,14 @@ describe FormVIII do
   end
 
   context "#assimilated_past" do
-    it 'conjugates formVIII assimilated past' do
+    it 'conjugates formVIII assimilated past with root1 waaw' do
       conjugator = Conjugator.new("و", "ف", "ق", "8", "past", :they)
       expect(conjugator.conjugate).to eq("اتّفقوا")
+    end
+
+    it 'conjugates formVIII assimilated past with root1 taa' do
+      conjugator = Conjugator.new("ت", "ب", "ع", "8", "past", :he)
+      expect(conjugator.conjugate).to eq("اتّبع")
     end
   end
 
