@@ -1,12 +1,25 @@
 # encoding: utf-8
 
-module PastTense
+class Past
 
-  def regular_past
+  def initialize(form)
+    @base = form.base
+    @root1 = form.root1
+    @root2 = form.root2
+    @root3 = form.root3
+    @type = form.type
+    @pronoun = form.pronoun
+  end
+
+  def conjugate
+    self.send(@type)
+  end
+
+  def regular
     @base + PAST_PRONOUNS[@pronoun]
   end
 
-  def defective_past
+  def defective
     @base = @base[0...-1]
     if @pronoun == :he
       @base + "ى"
@@ -17,7 +30,7 @@ module PastTense
     end
   end
 
-  def hollow_past
+  def hollow
     if [:he, :she, :they].include?(@pronoun)
       @base + PAST_PRONOUNS[@pronoun]
     else
@@ -26,7 +39,7 @@ module PastTense
     end
   end
 
-  def doubled_past
+  def doubled
     @root1 + @root2 + "ّ" + PAST_PRONOUNS[@pronoun]
   end
 end

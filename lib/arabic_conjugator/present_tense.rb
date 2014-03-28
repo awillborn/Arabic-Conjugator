@@ -1,14 +1,25 @@
 # encoding: utf-8
 
+class Present
 
-module PresentTense
+  def initialize(form)
+    @base = form.base
+    @root1 = form.root1
+    @root2 = form.root2
+    @root3 = form.root3
+    @type = form.type
+    @pronoun = form.pronoun
+  end
 
-  def regular_present
+  def conjugate
+    self.send(@type)
+  end
+
+  def regular
     PRESENT_PRONOUNS[@pronoun][0] + @base + PRESENT_PRONOUNS[@pronoun][1]
   end
 
-
-  def defective_present
+  def defective
     if [:you_f, :you_pl, :they].include?(@pronoun)
       PRESENT_PRONOUNS[@pronoun][0]  #(base - root3) + PRESENT_PRONOUNS[@pronoun][1]
     else
@@ -16,11 +27,11 @@ module PresentTense
     end
   end
 
-  def hollow_present
+  def hollow
     PRESENT_PRONOUNS[@pronoun][0] + @base + PRESENT_PRONOUNS[@pronoun][1]
   end
 
-  def doubled_present
+  def doubled
     PRESENT_PRONOUNS[@pronoun][0] + @root1 + @root2 + "ّ" + PRESENT_PRONOUNS[@pronoun][1]
   end
 

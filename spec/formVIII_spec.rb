@@ -31,9 +31,9 @@ describe FormVIII do
       expect(conjugator.conjugate).to eq("اتّفقوا")
     end
 
-    it 'conjugates formVIII assimilated past with root1 taa' do
-      conjugator = Conjugator.new("ت", "ب", "ع", "8", "past", :he)
-      expect(conjugator.conjugate).to eq("اتّبع")
+    xit 'conjugates formVIII assimilated past with root1 Thal' do
+      conjugator = Conjugator.new("ظ", "ل", "م", "8", "past", :he)
+      expect(conjugator.conjugate).to eq("اظّلم")
     end
   end
 

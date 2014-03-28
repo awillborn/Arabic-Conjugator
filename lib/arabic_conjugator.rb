@@ -4,25 +4,23 @@
 # Apparently there are some assimilated verbs that include the waaw in present tense conjugations?
 
 # Changes to add:
-# figure out what to do about doubled verbs that are also hollow/defective/whatever
-# Add doubled verbs (wazan III doubled is v. rare but should include this anyway I guess)
 # deal with verbs with hamza as first root in present tense personal and past tense form IV (are there other cases where this matters?)
 
 #coding: UTF-8
 
 require_relative 'arabic_conjugator/version'
-require_relative 'arabic_conjugator/form_I'
-require_relative 'arabic_conjugator/form_II'
-require_relative 'arabic_conjugator/form_III'
-require_relative 'arabic_conjugator/form_IV'
-require_relative 'arabic_conjugator/form_V'
-require_relative 'arabic_conjugator/form_VI'
-require_relative 'arabic_conjugator/form_VII'
-require_relative 'arabic_conjugator/form_VIII'
-require_relative 'arabic_conjugator/form_X'
+require_relative 'arabic_conjugator/forms/form_I'
+require_relative 'arabic_conjugator/forms/form_II'
+require_relative 'arabic_conjugator/forms/form_III'
+require_relative 'arabic_conjugator/forms/form_IV'
+require_relative 'arabic_conjugator/forms/form_V'
+require_relative 'arabic_conjugator/forms/form_VI'
+require_relative 'arabic_conjugator/forms/form_VII'
+require_relative 'arabic_conjugator/forms/form_VIII'
+require_relative 'arabic_conjugator/forms/form_X'
 require_relative 'arabic_conjugator/form'
-require_relative 'arabic_conjugator/form_factory'
-require_relative 'arabic_conjugator/type_factory'
+require_relative 'arabic_conjugator/factories/form_factory'
+require_relative 'arabic_conjugator/factories/type_factory'
 
 class Conjugator
   attr_reader :root1, :root2, :root3
@@ -36,13 +34,8 @@ class Conjugator
     @pronoun = pronoun
   end
 
-  def type
-    klass = TypeFactory.new(@root1, @root2, @root3)
-    klass.find_type
-  end
-
   def conjugate
-    form = FormFactory.new(@form, [@root1, @root2, @root3,@tense, @pronoun, type]).create_form
+    form = FormFactory.new(@form, [@root1, @root2, @root3, @tense, @pronoun]).create_form
     form.conjugate
   end
 

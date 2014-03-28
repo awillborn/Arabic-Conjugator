@@ -1,24 +1,14 @@
 # encoding: utf-8
 
-require_relative 'form'
+require_relative '../past_tense'
 
-class FormI < Form
+class FormIPast < Past
 
-  def initialize(root1, root2, root3, tense, pronoun, type)
-    super
-    @base = @root1 + @root2 + @root3
-    @masdar = "ال" + @base
+  def assimilated
+    regular
   end
 
-  def assimilated_past
-    regular_past
-  end
-
-  def assimilated_present
-    PRESENT_PRONOUNS[@pronoun][0] + @root2 + @root3 + PRESENT_PRONOUNS[@pronoun][1]
-  end
-
-  def defective_past
+  def defective
     @base = @base[0...-1]
     if @root3 == "و" && @pronoun == :he
       @base + "ا"
@@ -31,7 +21,7 @@ class FormI < Form
     end
   end
 
-  def hollow_past
+  def hollow
     @root2 = "ا"
     @base = @root1 + @root2 + @root3
     super

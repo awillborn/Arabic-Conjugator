@@ -23,4 +23,21 @@ class TypeFactory
       "regular"
     end
   end
+
+  def hollow?
+    @root2 == "و" || @root2 == "ي"
+  end
+
+  def defective?
+    @root3 == "و" || @root3 == "ي"
+  end
+
+  def doubled?
+    @root2 == @root3
+  end
+
+  def assimilated?
+    @root1 == "و" || @root1 == "ي"
+  end
+
 end
