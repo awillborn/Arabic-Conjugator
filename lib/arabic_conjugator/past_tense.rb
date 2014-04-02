@@ -12,7 +12,7 @@ class Past
   end
 
   def conjugate
-    self.send(@type)
+    self.send(@type[0])
   end
 
   def regular

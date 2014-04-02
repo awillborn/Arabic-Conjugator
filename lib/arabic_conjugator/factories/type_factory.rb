@@ -11,17 +11,13 @@ class TypeFactory
   end
 
   def find_type
-    if @root2 == "و" || @root2 == "ي"
-      "hollow"
-    elsif @root3 == "و" || @root3 == "ي"
-      "defective"
-    elsif @root2 == @root3
-      "doubled"
-    elsif @root1 == "و" || @root1 == "ي"
-      "assimilated"
-    else
-      "regular"
-    end
+    types = []
+    types << "hollow" if hollow?
+    types << "defective" if defective?
+    types << "doubled" if doubled?
+    types << "assimilated" if assimilated?
+    types << "regular" if types.empty?
+    types
   end
 
   def hollow?
