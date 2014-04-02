@@ -6,22 +6,22 @@ describe FormVI do
 
   context "#past" do
     it 'conjugates formVI correctly' do
-      conjugator = Conjugator.new("ب", "د", "ل", "6", "past", :he)
-      expect(conjugator.conjugate).to eq("تبادل")
+      verb = Verb.new("ب", "د", "ل", "6", "past", :he)
+      expect(verb.conjugate).to eq("تبادل")
     end
   end
 
   context "#defective_past" do
     it 'conjugates formVI defective past' do
-      conjugator = Conjugator.new("ق", "ض", "ي", "6", "past", :he)
-      expect(conjugator.conjugate).to eq("تقاضى")
+      verb = Verb.new("ق", "ض", "ي", "6", "past", :he)
+      expect(verb.conjugate).to eq("تقاضى")
     end
   end
 
   context '#present' do
     it 'conjugates formVI present' do
-      conjugator = Conjugator.new("ب", "د", "ل", "6", "present", :he)
-      expect(conjugator.conjugate).to eq("يتبادل")
+      verb = Verb.new("ب", "د", "ل", "6", "present", :he)
+      expect(verb.conjugate).to eq("يتبادل")
     end
   end
 end

@@ -22,7 +22,7 @@ require_relative 'arabic_conjugator/form'
 require_relative 'arabic_conjugator/factories/form_factory'
 require_relative 'arabic_conjugator/factories/type_factory'
 
-class Conjugator
+class Verb
   attr_reader :root1, :root2, :root3
 
   def initialize(root1, root2, root3, form, tense, pronoun)
