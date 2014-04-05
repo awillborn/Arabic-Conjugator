@@ -23,15 +23,4 @@ class FormVIIIPastBase < Base
     "اتّ" + @root2 + @root3
   end
 
-  def defective_base
-    @base = @base[0...-1]
-    if @pronoun == :he
-      @base + "ى"
-    elsif [:she, :they].include?(@pronoun)
-      @base
-    else
-      @base + "ي"
-    end
-  end
-
 end
