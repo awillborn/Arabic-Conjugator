@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe FormX do
+describe "Form X" do
   context "#past" do
     it 'conjugates formX past' do
       verb = Verb.new({root1: "ك", root2: "ش", root3: "ف", form: "10", tense: "past", pronoun: :you_pl})

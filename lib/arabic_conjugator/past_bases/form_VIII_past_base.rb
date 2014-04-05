@@ -4,6 +4,11 @@ require_relative '../base'
 
 class FormVIIIPastBase < Base
 
+  def initialize(verb)
+    super
+    @base =  "ا" + @root1 + "ت" + @root2 + @root3
+  end
+
   def regular_base
     "ا" + @root1 + "ت" + @root2 + @root3
   end

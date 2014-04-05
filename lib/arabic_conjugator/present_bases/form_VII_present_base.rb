@@ -2,8 +2,13 @@
 
 class FormVIIPresentBase < Base
 
+  def initialize(verb)
+    super
+    @base = "ن" + @root1 + @root2 + @root3
+  end
+
   def regular_base
-    "ن" + @root1 + @root2 + @root3
+    @base
   end
 
   def hollow_base

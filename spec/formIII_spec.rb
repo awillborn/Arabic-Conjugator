@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 
-describe FormIII do
+describe "Form III" do
 
   context "#past" do
     it 'conjugates formIII correctly' do

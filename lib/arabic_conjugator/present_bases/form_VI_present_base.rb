@@ -5,8 +5,13 @@
 
 class FormVIPresentBase < Base
 
+  def initialize(verb)
+    super
+    @base =  "ت" + @root1 + "ا" + @root2 + @root3
+  end
+
   def regular_base
-    "ت" + @root1 + "ا" + @root2 + @root3
+    @base
   end
 
   def defective_base

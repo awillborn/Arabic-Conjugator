@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe FormIV do
+describe "Form IV" do
 
   context "#past" do
     it 'conjugates formIV past' do

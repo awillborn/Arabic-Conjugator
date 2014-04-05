@@ -2,8 +2,13 @@
 
 class FormXPresentBase < Base
 
+  def initialize(verb)
+    super
+    @base = "ست" + @root1 + @root2 + @root3
+  end
+
   def regular_base
-    "ست" + @root1 + @root2 + @root3
+    @base
   end
 
 end

@@ -2,8 +2,13 @@
 
 class FormVIIIPresentBase < Base
 
+  def initialize(verb)
+    super
+    @base =  @root1 + "ت" + @root2 + @root3
+  end
+
   def regular_base
-    @root1 + "ت" + @root2 + @root3
+    @base
   end
 
   def hollow_base

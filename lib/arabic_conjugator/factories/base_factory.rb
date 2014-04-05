@@ -20,24 +20,24 @@ require_relative '../present_bases/form_X_present_base'
 
 class BaseFactory
   FORM_MAPPING = {
-    "FormIpast" => FormIPastBase,
-    "FormIIpast" => FormIIPastBase,
-    "FormIIIpast" => FormIIIPastBase,
-    "FormIVpast" => FormIVPastBase,
-    "FormVpast" => FormVPastBase,
-    "FormVIpast" => FormVIPastBase,
-    "FormVIIpast" => FormVIIPastBase,
-    "FormVIIIpast" => FormVIIIPastBase,
-    "FormXpast" => FormXPastBase,
-    "FormIpresent" => FormIPresentBase,
-    "FormIIpresent" => FormIIPresentBase,
-    "FormIIIpresent" => FormIIIPresentBase,
-    "FormIVpresent" => FormIVPresentBase,
-    "FormVpresent" => FormVPresentBase,
-    "FormVIpresent" => FormVIPresentBase,
-    "FormVIIpresent" => FormVIIPresentBase,
-    "FormVIIIpresent" => FormVIIIPresentBase,
-    "FormXpresent" => FormXPresentBase
+    "1past" => FormIPastBase,
+    "2past" => FormIIPastBase,
+    "3past" => FormIIIPastBase,
+    "4past" => FormIVPastBase,
+    "5past" => FormVPastBase,
+    "6past" => FormVIPastBase,
+    "7past" => FormVIIPastBase,
+    "8past" => FormVIIIPastBase,
+    "10past" => FormXPastBase,
+    "1present" => FormIPresentBase,
+    "2present" => FormIIPresentBase,
+    "3present" => FormIIIPresentBase,
+    "4present" => FormIVPresentBase,
+    "5present" => FormVPresentBase,
+    "6present" => FormVIPresentBase,
+    "7present" => FormVIIPresentBase,
+    "8present" => FormVIIIPresentBase,
+    "10present" => FormXPresentBase
   }
 
   TYPE_MAPPING = {
@@ -50,7 +50,7 @@ class BaseFactory
 
   def initialize(verb)
     @verb = verb
-    @form_name = verb.form.class.to_s
+    @form_name = verb.form
     @tense = verb.opts[:tense]
     @types = verb.types[0]
   end
