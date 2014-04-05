@@ -7,10 +7,9 @@ class TypeFactory
     @root1 = root1
     @root2 = root2
     @root3 = root3
-    @type = find_type
   end
 
-  def find_type
+  def load_types
     types = []
     types << "hollow" if hollow?
     types << "defective" if defective?

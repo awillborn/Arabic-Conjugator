@@ -21,24 +21,46 @@ require_relative 'arabic_conjugator/forms/form_X'
 require_relative 'arabic_conjugator/form'
 require_relative 'arabic_conjugator/factories/form_factory'
 require_relative 'arabic_conjugator/factories/type_factory'
+require_relative 'arabic_conjugator/factories/base_factory'
+require_relative 'arabic_conjugator/factories/tense_factory'
+require_relative 'arabic_conjugator/past_tense'
+require_relative 'arabic_conjugator/present_tense'
 
 class Verb
-  attr_reader :root1, :root2, :root3
+  attr_reader :root1, :root2, :root3, :tense, :types, :form, :base, :opts, :pronoun
 
-  def initialize(root1, root2, root3, form, tense, pronoun)
-    @root1 = root1
-    @root2 = root2
-    @root3 = root3
-    @form = form
-    @tense = tense
-    @pronoun = pronoun
+  def initialize(opts)
+    @opts = opts
+    @root1 = opts[:root1]
+    @root2 = opts[:root2]
+    @root3 = opts[:root3]
+    @pronoun = opts[:pronoun]
+    @tense = opts[:tense]
+    @form = find_form(opts[:form], [@root1, @root2, @root3])
+    @types = find_types
+    @base = find_base
+  end
+
+  def find_form(form, roots)
+    FormFactory.new(form, roots).create_form
+  end
+
+  def find_types
+    TypeFactory.new(@root1, @root2, @root3).load_types
+  end
+
+  def find_base
+    BaseFactory.new(self).load_base
+  end
+
+  def find_tense
+    TenseFactory.new(self).create_tense
   end
 
   def conjugate
-    form = FormFactory.new(@form, [@root1, @root2, @root3, @tense, @pronoun]).create_form
-    form.conjugate
+    @tense = find_tense
+    @tense.conjugate
   end
 
 end
-
 
