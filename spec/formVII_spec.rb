@@ -49,4 +49,18 @@ describe "Form VII" do
     end
   end
 
+  context "hollow present" do
+    it 'conjugates formVII present, :she' do
+      verb = Verb.new({root1: "ق", root2: "و", root3: "د", form: "7", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تنقاد")
+    end
+  end
+
+  context "doubled present" do
+    it 'conjugates formVII doubled past, :she' do
+      verb = Verb.new({root1: "ض", root2: "م", root3: "م", form: "7", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تنضمّ")
+    end
+  end
+
 end
