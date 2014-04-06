@@ -32,8 +32,4 @@ class FormVPastBase < Base
     @base
   end
 
-  def assimilated_base
-    @base
-  end
-
 end

@@ -23,10 +23,6 @@ class FormIVPresentBase < Base
     @root1 + "ي" + @root3
   end
 
-  def assimilated_base
-    @base
-  end
-
   def doubled_base
     @base[0...-1] + "ّ"
   end

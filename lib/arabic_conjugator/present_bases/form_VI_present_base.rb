@@ -22,10 +22,6 @@ class FormVIPresentBase < Base
     end
   end
 
-  def assimilated_base
-    @base
-  end
-
   def hollow_base
     @base
   end

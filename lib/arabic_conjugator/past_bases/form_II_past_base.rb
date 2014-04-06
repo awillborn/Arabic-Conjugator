@@ -17,10 +17,6 @@ class FormIIPastBase < Base
     @base
   end
 
-  def assimilated_base
-    @base
-  end
-
   def hollow_base
     @base
   end

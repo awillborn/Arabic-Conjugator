@@ -29,8 +29,4 @@ class FormIVPastBase < Base
     end
   end
 
-  def assimilated_base
-    @base
-  end
-
 end

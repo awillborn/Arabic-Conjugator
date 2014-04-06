@@ -13,10 +13,6 @@ class FormIPastBase < Base
     @base
   end
 
-  def assimilated_base
-    @base
-  end
-
   def hollow_base
     @root2 = "ا"
     @root1 + @root2 + @root3

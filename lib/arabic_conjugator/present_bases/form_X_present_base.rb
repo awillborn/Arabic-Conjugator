@@ -15,10 +15,6 @@ class FormXPresentBase < Base
     @base[0...-1] + "ّ"
   end
 
-  def assimilated_base
-    @base
-  end
-
   def hollow_base
     @base
   end
