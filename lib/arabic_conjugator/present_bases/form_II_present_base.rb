@@ -19,4 +19,8 @@ class FormIIPresentBase < Base
     @base
   end
 
+  def doubled_base
+    @base
+  end
+
 end

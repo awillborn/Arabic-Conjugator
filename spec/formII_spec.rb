@@ -46,6 +46,13 @@ describe "Form II" do
     end
   end
 
+  context 'doubled present' do
+    it 'conjugates form II doubled present verbs' do
+      verb = Verb.new({root1: "ش", root2: "د", root3: "د", form: "2", tense: "present", pronoun: :I})
+      expect(verb.conjugate).to eq("أشدّد")
+    end
+  end
+
   context 'defective present' do
     it 'conjugates form II defective present' do
       verb = Verb.new({root1: "ص", root2: "ل", root3: "ي", form: "2", tense: "present", pronoun: :she})
