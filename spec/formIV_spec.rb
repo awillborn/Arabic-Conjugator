@@ -45,19 +45,26 @@ describe "Form IV" do
   end
 
   context 'regular present' do
-    it 'conjugates formIV present' do
+    it 'conjugates form IV present' do
       verb = Verb.new({root1: "ر", root2: "س", root3: "ل", form: "4", tense: "present", pronoun: :you_pl})
       expect(verb.conjugate).to eq("ترسلون")
     end
   end
 
+  context 'hollow present' do
+    it 'conjugates form IV hollow present' do
+      verb = Verb.new({root1: "ق", root2: "و", root3: "م", form: "4", tense: "present", pronoun: :I})
+      expect(verb.conjugate).to eq("أقيم")
+    end
+  end
+
   context 'defective present' do
-    it 'conjugates formIV present, :you_pl' do
+    it 'conjugates form IV defective present, :you_pl' do
       verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "present", pronoun: :you_pl})
       expect(verb.conjugate).to eq("تجرون")
     end
 
-    it 'conjugates formIV present, :I' do
+    it 'conjugates form IV defective present, :I' do
       verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "present", pronoun: :I})
       expect(verb.conjugate).to eq("أجري")
     end

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class FormIVPresentBase < Base
 
   def initialize(verb)
@@ -15,6 +17,10 @@ class FormIVPresentBase < Base
     else
       @base
     end
+  end
+
+  def hollow_base
+    @root1 + "ي" + @root3
   end
 
 end
