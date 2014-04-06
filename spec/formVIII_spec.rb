@@ -63,4 +63,11 @@ describe "Form VIII" do
     end
   end
 
+  context "doubled present" do
+    it 'conjugates form VIII doubled present' do
+      verb = Verb.new({root1: "م", root2: "د", root3: "د", form: "8", tense: "present", pronoun: :we})
+      expect(verb.conjugate).to eq("نمتدّ")
+    end
+  end
+
 end

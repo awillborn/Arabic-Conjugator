@@ -20,4 +20,8 @@ class FormVIIIPresentBase < Base
     "تّ" + @root2 + @root3
   end
 
+  def doubled_base
+    @base[0...-1] + "ّ"
+  end
+
 end
