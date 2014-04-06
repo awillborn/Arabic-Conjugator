@@ -64,4 +64,11 @@ describe "Form X" do
     end
   end
 
+  context "hollow present" do
+    it 'conjugates form X hollow present' do
+      verb = Verb.new({root1: "ع", root2: "ي", root3: "د", form: "10", tense: "present", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("تستعيدون")
+    end
+  end
+
 end
