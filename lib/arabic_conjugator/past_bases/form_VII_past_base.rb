@@ -23,4 +23,16 @@ class FormVIIPastBase < Base
     end
   end
 
+  def assimilated_base
+    @base
+  end
+
+  def doubled_base
+    if [:he, :she, :they].include?(@pronoun)
+      @base[0...-1] + "ّ"
+    else
+      @base
+    end
+  end
+
 end

@@ -30,6 +30,18 @@ describe "Form VII" do
     end
   end
 
+  context "doubled past" do
+    it 'conjugates formVII doubled past, :she' do
+      verb = Verb.new({root1: "ض", root2: "م", root3: "م", form: "7", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("انضمّت")
+    end
+
+    it 'conjugates formVII doubled past, :I' do
+      verb = Verb.new({root1: "ض", root2: "م", root3: "م", form: "7", tense: "past", pronoun: :I})
+      expect(verb.conjugate).to eq("انضممت")
+    end
+  end
+
   context 'regular present' do
     it 'conjugates formVII present' do
       verb = Verb.new({root1: "ق", root2: "ط", root3: "ع", form: "7", tense: "present", pronoun: :she})
