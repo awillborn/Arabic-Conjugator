@@ -19,9 +19,14 @@ describe "Form IV" do
   end
 
   context "hollow past" do
-    it 'conjugates formIV hollow past' do
+    it 'conjugates formIV hollow past, :you_pl' do
       verb = Verb.new({root1: "ق", root2: "و", root3: "م", form: "4", tense: "past", pronoun: :you_pl})
       expect(verb.conjugate).to eq("أقمتم")
+    end
+
+    it 'conjugates formIV hollow past, :he' do
+      verb = Verb.new({root1: "ق", root2: "و", root3: "م", form: "4", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("أقام")
     end
   end
 

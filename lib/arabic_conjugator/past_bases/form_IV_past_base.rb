@@ -14,7 +14,11 @@ class FormIVPastBase < Base
   end
 
   def hollow_base
-    "أ" + @root1 + @root3
+    if [:he, :she, :they].include?(@pronoun)
+      "أ" + @root1 + "ا" + @root3
+    else
+      "أ" + @root1 + @root3
+    end
   end
 
   def doubled_base
