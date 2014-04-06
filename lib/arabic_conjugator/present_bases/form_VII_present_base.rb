@@ -20,5 +20,13 @@ class FormVIIPresentBase < Base
     @base[0...-1] + "ّ"
   end
 
+  def assimilated_base
+    @base
+  end
+
+  def defective_base
+    @base
+  end
+
 
 end

@@ -63,4 +63,11 @@ describe "Form VII" do
     end
   end
 
+  context "defective present" do
+    it 'conjugates formVII defective present' do
+      verb = Verb.new({root1: "ق", root2: "ض", root3: "ي", form: "7", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تنقضي")
+    end
+  end
+
 end
