@@ -18,4 +18,8 @@ class FormVIPresentBase < Base
     @root3 = "ى"
   end
 
+  def assimilated_base
+    @base
+  end
+
 end

@@ -38,4 +38,11 @@ describe "Form VI" do
       expect(verb.conjugate).to eq("يتبادل")
     end
   end
+
+  context "assimilated present" do
+    it 'conjugates form VI assimilated present' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ق", form: "6", tense: "present", pronoun: :you_f})
+      expect(verb.conjugate).to eq("تتوافقين")
+    end
+  end
 end
