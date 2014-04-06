@@ -53,6 +53,13 @@ describe "Form V" do
     end
   end
 
+  context 'hollow present' do
+    it 'conjugates form V hollow present' do
+      verb = Verb.new({root1: "ع", root2: "ي", root3: "ن", form: "5", tense: "present", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("تتعيّنون")
+    end
+  end
+
   context 'doubled present' do
     it 'conjugates formV doubled present' do
       verb = Verb.new({root1: "ض", root2: "ر", root3: "ر", form: "5", tense: "present", pronoun: :she})
