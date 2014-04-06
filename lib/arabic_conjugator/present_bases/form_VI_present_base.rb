@@ -15,7 +15,11 @@ class FormVIPresentBase < Base
   end
 
   def defective_base
-    @root3 = "ى"
+    if [:you_f, :you_pl, :they].include?(@pronoun)
+      @base[0...-1]
+    else
+      @base[0...-1] + "ى"
+    end
   end
 
   def assimilated_base

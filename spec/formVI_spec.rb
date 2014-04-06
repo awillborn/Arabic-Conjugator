@@ -45,4 +45,16 @@ describe "Form VI" do
       expect(verb.conjugate).to eq("تتوافقين")
     end
   end
+
+  context "defective present" do
+    it 'conjugates form VI defective present, :he' do
+      verb = Verb.new({root1: "ق", root2: "ض", root3: "ي", form: "6", tense: "present", pronoun: :he})
+      expect(verb.conjugate).to eq("يتقاضى")
+    end
+
+    it 'conjugates form VI defective present, :they' do
+      verb = Verb.new({root1: "ق", root2: "ض", root3: "ي", form: "6", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يتقاضون")
+    end
+  end
 end
