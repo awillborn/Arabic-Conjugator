@@ -77,4 +77,16 @@ describe "Form I" do
     end
   end
 
+  context "defective present" do
+    it 'conjugates form I defective present with final root waaw' do
+      verb = Verb.new({root1: "ش", root2: "ك", root3: "و", form: "1", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يشكون")
+    end
+
+    it 'conjugates form I defective past with final root yaa' do
+      verb = Verb.new({root1: "د", root2: "ع", root3: "ي", form: "1", tense: "present", pronoun: :we})
+      expect(verb.conjugate).to eq("ندعي")
+    end
+  end
+
 end
