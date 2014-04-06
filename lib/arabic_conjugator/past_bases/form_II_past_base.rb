@@ -10,7 +10,11 @@ class FormIIPastBase < Base
   end
 
   def regular_base
-    @root1 + @root2 + "ّ" + @root3
+    @base
+  end
+
+  def doubled_base
+    @base
   end
 
 end

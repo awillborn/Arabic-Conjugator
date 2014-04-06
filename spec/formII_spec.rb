@@ -19,14 +19,14 @@ describe "Form II" do
   end
 
   context 'doubled past' do
-    xit 'conjugates form II doubled past' do
+    it 'conjugates form II doubled past' do
       verb = Verb.new({root1: "ش", root2: "د", root3: "د", form: "2", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("شدّدوا")
     end
   end
 
   context 'regular present' do
-    it 'conjugates form II present' do
+    it 'conjugates form II regular present' do
       verb = Verb.new({root1: "ع", root2: "ر", root3: "ف", form: "2", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يعرّفون")
     end
