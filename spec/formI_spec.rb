@@ -70,4 +70,11 @@ describe "Form I" do
     end
   end
 
+  context "hollow present" do
+    it 'conjugates form I hollow present' do
+      verb = Verb.new({root1: "ق", root2: "و", root3: "ل", form: "1", tense: "present", pronoun: :he})
+      expect(verb.conjugate).to eq("يقول")
+    end
+  end
+
 end
