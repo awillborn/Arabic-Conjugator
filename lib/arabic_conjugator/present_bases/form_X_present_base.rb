@@ -11,4 +11,8 @@ class FormXPresentBase < Base
     @base
   end
 
+  def doubled_base
+    @base[0...-1] + "ّ"
+  end
+
 end

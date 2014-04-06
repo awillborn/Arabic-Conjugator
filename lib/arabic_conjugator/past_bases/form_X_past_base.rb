@@ -10,16 +10,23 @@ class FormXPastBase < Base
   end
 
   def regular_base
-    "است" + @root1 + @root2 + @root3
+    @base
   end
 
   def hollow_base
     @root2 = "ا"
-    @base = "است" + @root1 + @root2 + @root3
     if [:he, :she, :they].include?(@pronoun)
       @base
     else
       "است" + @root1 + @root3
+    end
+  end
+
+  def doubled_base
+    if [:he, :she, :they].include?(@pronoun)
+      @base[0...-1] + "ّ"
+    else
+      @base
     end
   end
 
