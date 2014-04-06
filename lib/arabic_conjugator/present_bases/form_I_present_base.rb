@@ -8,7 +8,7 @@ class FormIPresentBase < Base
   end
 
   def regular_base
-    @root1 + @root2 + @root3
+    @base
   end
 
   def assimilated_base
