@@ -15,8 +15,4 @@ class FormIIIPresentBase < Base
     end
   end
 
-  def hollow_base
-    @base
-  end
-
 end

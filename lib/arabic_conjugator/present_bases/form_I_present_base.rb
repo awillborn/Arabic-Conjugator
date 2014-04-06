@@ -15,10 +15,6 @@ class FormIPresentBase < Base
     @base[0...-1] + "ّ"
   end
 
-  def hollow_base
-    @base
-  end
-
   def defective_base
     if [:you_pl, :they, :you_f].include?(@pronoun)
       @base[0...-1]

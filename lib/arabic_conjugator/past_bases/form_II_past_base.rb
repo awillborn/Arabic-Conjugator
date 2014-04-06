@@ -13,8 +13,4 @@ class FormIIPastBase < Base
     @base
   end
 
-  def hollow_base
-    @base
-  end
-
 end
