@@ -11,4 +11,12 @@ class FormIIIPresentBase < Base
     @root1 + "ا" + @root2 + @root3
   end
 
+  def defective_base
+    if [:you_pl, :they, :you_f].include?(@pronoun)
+      @base[0...-1]
+    else
+      @base
+    end
+  end
+
 end
