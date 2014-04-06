@@ -24,4 +24,8 @@ class FormVPastBase < Base
     end
   end
 
+  def doubled_base
+    @base
+  end
+
 end
