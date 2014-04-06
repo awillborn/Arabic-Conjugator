@@ -13,6 +13,10 @@ class Base
     @pronoun = verb.pronoun
   end
 
+  def regular_base
+    @base
+  end
+
   def defective_base
     @base = @base[0...-1]
     if @pronoun == :he

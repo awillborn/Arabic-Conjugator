@@ -10,10 +10,6 @@ class FormVIPresentBase < Base
     @base =  "ت" + @root1 + "ا" + @root2 + @root3
   end
 
-  def regular_base
-    @base
-  end
-
   def defective_base
     if [:you_f, :you_pl, :they].include?(@pronoun)
       @base[0...-1]

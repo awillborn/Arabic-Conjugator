@@ -7,10 +7,6 @@ class FormIIIPresentBase < Base
     @base = @root1 + "ا" + @root2 + @root3
   end
 
-  def regular_base
-    @root1 + "ا" + @root2 + @root3
-  end
-
   def defective_base
     if [:you_pl, :they, :you_f].include?(@pronoun)
       @base[0...-1]

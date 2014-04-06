@@ -9,10 +9,6 @@ class FormVIPastBase < Base
     @base =  "ت" + @root1 + "ا" + @root2 + @root3
   end
 
-  def regular_base
-    "ت" + @root1 + "ا" + @root2 + @root3
-  end
-
   def defective_base
     @base = @base[0...-1]
     if @root3 == "و" && @pronoun == :he

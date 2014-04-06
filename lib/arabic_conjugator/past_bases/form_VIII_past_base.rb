@@ -9,10 +9,6 @@ class FormVIIIPastBase < Base
     @base =  "ا" + @root1 + "ت" + @root2 + @root3
   end
 
-  def regular_base
-    "ا" + @root1 + "ت" + @root2 + @root3
-  end
-
   def hollow_base
     @root2 = "ا"
     @base = "ا" + @root1 + "ت" + @root2 + @root3

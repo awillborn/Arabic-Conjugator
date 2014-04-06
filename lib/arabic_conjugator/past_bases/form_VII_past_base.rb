@@ -9,10 +9,6 @@ class FormVIIPastBase < Base
     @base = "ان" + @root1 + @root2 + @root3
   end
 
-  def regular_base
-    "ان" + @root1 + @root2 + @root3
-  end
-
   def hollow_base
     @root2 = "ا"
     @base = "ان" + @root1 + @root2 + @root3

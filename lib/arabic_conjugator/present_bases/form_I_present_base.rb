@@ -7,10 +7,6 @@ class FormIPresentBase < Base
     @base = @root1 + @root2 + @root3
   end
 
-  def regular_base
-    @base
-  end
-
   def assimilated_base
     @root2 + @root3
   end
