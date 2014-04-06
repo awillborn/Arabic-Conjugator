@@ -33,7 +33,9 @@ describe "Form II" do
   end
 
   context 'defective present' do
-    xit 'conjugates form II defective present' do
+    it 'conjugates form II defective present' do
+      verb = Verb.new({root1: "ص", root2: "ل", root3: "ي", form: "2", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تصلّي")
     end
   end
 

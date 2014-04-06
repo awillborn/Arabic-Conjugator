@@ -15,4 +15,8 @@ class FormIIPresentBase < Base
     @base
   end
 
+  def defective_base
+    @base
+  end
+
 end
