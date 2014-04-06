@@ -23,14 +23,14 @@ describe "Form I" do
     end
   end
 
-  context "hollow_past" do
+  context "hollow past" do
     it 'conjugates form I hollow past' do
       verb = Verb.new({root1: "ق", root2: "و", root3: "ل", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("قال")
     end
   end
 
-  context "#assimilated_past" do
+  context "assimilated past" do
     it 'conjugates form I assimilated past with root 1 waaw'  do
       verb = Verb.new({root1: "و", root2: "ص", root3: "ف", form: "1", tense: "past", pronoun: :she})
       expect(verb.conjugate).to eq("وصفت")
@@ -38,9 +38,14 @@ describe "Form I" do
   end
 
   context "doubled past" do
-    xit 'conjugates form I doubled past' do
+    it 'conjugates form I doubled past, :you_m' do
       verb = Verb.new({root1: "ر", root2: "د", root3: "د", form: "1", tense: "past", pronoun: :you_m})
       expect(verb.conjugate).to eq("رددت")
+    end
+
+    it 'conjugates form I doubled past, :she' do
+      verb = Verb.new({root1: "ر", root2: "د", root3: "د", form: "1", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("ردّت")
     end
   end
 
