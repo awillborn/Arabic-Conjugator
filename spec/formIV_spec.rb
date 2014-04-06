@@ -50,4 +50,16 @@ describe "Form IV" do
       expect(verb.conjugate).to eq("ترسلون")
     end
   end
+
+  context 'defective present' do
+    it 'conjugates formIV present, :you_pl' do
+      verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "present", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("تجرون")
+    end
+
+    it 'conjugates formIV present, :I' do
+      verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "present", pronoun: :I})
+      expect(verb.conjugate).to eq("أجري")
+    end
+  end
 end
