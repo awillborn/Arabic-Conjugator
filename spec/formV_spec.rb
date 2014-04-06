@@ -32,4 +32,11 @@ describe "Form V" do
       expect(verb.conjugate).to eq("تتعرّف")
     end
   end
+
+  context 'doubled present' do
+    it 'conjugates formV doubled present' do
+      verb = Verb.new({root1: "ض", root2: "ر", root3: "ر", form: "5", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تتضرّر")
+    end
+  end
 end
