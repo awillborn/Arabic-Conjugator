@@ -59,4 +59,11 @@ describe "Form III" do
     end
   end
 
+  context 'assimilated present' do
+    it 'conjugates formIII assimilated present' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ق", form: "3", tense: "present", pronoun: :I})
+      expect(verb.conjugate).to eq("أوافق")
+    end
+  end
+
 end
