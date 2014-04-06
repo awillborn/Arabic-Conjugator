@@ -23,4 +23,8 @@ class FormIVPresentBase < Base
     @root1 + "ي" + @root3
   end
 
+  def assimilated_base
+    @base
+  end
+
 end

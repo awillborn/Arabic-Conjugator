@@ -63,6 +63,13 @@ describe "Form IV" do
     end
   end
 
+  context 'assimilated present' do
+    it 'conjugates form IV assimilated present' do
+      verb = Verb.new({root1: "و", root2: "ق", root3: "ف", form: "4", tense: "past", pronoun: :we})
+      expect(verb.conjugate).to eq("أوقفنا")
+    end
+  end
+
   context 'defective present' do
     it 'conjugates form IV defective present, :you_pl' do
       verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "present", pronoun: :you_pl})
