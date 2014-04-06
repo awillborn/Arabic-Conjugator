@@ -57,9 +57,9 @@ describe "Form I" do
   end
 
   context "doubled present" do
-    xit 'conjugates form I doubled present' do
+    it 'conjugates form I doubled present' do
       verb = Verb.new({root1: "ر", root2: "د", root3: "د", form: "1", tense: "present", pronoun: :she})
-      expect(verb.conjugate).to eq("ردّت")
+      expect(verb.conjugate).to eq("تردّ")
     end
   end
 

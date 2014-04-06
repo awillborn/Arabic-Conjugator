@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class FormIPresentBase < Base
 
   def initialize(verb)
@@ -11,6 +13,10 @@ class FormIPresentBase < Base
 
   def assimilated_base
     @root2 + @root3
+  end
+
+  def doubled_base
+    @base[0...-1] + "ّ"
   end
 
 end
