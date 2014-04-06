@@ -32,6 +32,13 @@ describe "Form V" do
     end
   end
 
+  context 'assimilated past' do
+    it 'conjugates form V assimilated past' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ر", form: "5", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("توفّروا")
+    end
+  end
+
 
   context 'regular present' do
     it 'conjugates formV present' do
