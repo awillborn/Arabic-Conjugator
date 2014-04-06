@@ -25,6 +25,13 @@ describe "Form II" do
     end
   end
 
+  context 'assimilated past' do
+    it 'conjugates form II assimilated past' do
+      verb = Verb.new({root1: "ي", root2: "س", root3: "ر", form: "2", tense: "past", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("يسّرتم")
+    end
+  end
+
   context 'regular present' do
     it 'conjugates form II regular present' do
       verb = Verb.new({root1: "ع", root2: "ر", root3: "ف", form: "2", tense: "present", pronoun: :they})
