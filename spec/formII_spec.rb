@@ -32,6 +32,13 @@ describe "Form II" do
     end
   end
 
+  context 'hollow past' do
+    it 'conjugates form II hollow past with waaw as second radical' do
+      verb = Verb.new({root1: "ص", root2: "و", root3: "ت", form: "2", tense: "past", pronoun: :you_f})
+      expect(verb.conjugate).to eq("صوّتت")
+    end
+  end
+
   context 'regular present' do
     it 'conjugates form II regular present' do
       verb = Verb.new({root1: "ع", root2: "ر", root3: "ف", form: "2", tense: "present", pronoun: :they})
