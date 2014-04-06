@@ -17,4 +17,12 @@ class FormIVPastBase < Base
     "أ" + @root1 + @root3
   end
 
+  def doubled_base
+    if [:he, :she, :they].include?(@pronoun)
+      @base[0...-1] + "ّ"
+    else
+      @base
+    end
+  end
+
 end
