@@ -57,4 +57,11 @@ describe "Form VI" do
       expect(verb.conjugate).to eq("يتقاضون")
     end
   end
+
+  context "hollow present" do
+    it 'conjugates form VI hollow present' do
+      verb = Verb.new({root1: "ع", root2: "و", root3: "ن", form: "6", tense: "present", pronoun: :we})
+      expect(verb.conjugate).to eq("نتعاون")
+    end
+  end
 end
