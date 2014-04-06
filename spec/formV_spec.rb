@@ -19,9 +19,16 @@ describe "Form V" do
   end
 
   context 'doubled past' do
-    it 'conjugates formV doubled past' do
+    it 'conjugates form V doubled past' do
       verb = Verb.new({root1: "ض", root2: "ر", root3: "ر", form: "5", tense: "past", pronoun: :I})
       expect(verb.conjugate).to eq("تضرّرت")
+    end
+  end
+
+  context 'hollow past' do
+    it 'conjugates form V hollow past' do
+      verb = Verb.new({root1: "ع", root2: "ي", root3: "ن", form: "5", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("تعيّنوا")
     end
   end
 
