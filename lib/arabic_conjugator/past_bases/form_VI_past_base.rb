@@ -26,4 +26,8 @@ class FormVIPastBase < Base
     @base
   end
 
+  def assimilated_base
+    @base
+  end
+
 end

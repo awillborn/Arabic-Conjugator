@@ -25,6 +25,13 @@ describe "Form VI" do
     end
   end
 
+  context "assimilated past" do
+    it 'conjugates form VI assimilated past' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ق", form: "6", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("توافقت")
+    end
+  end
+
   context 'regular present' do
     it 'conjugates formVI present' do
       verb = Verb.new({root1: "ب", root2: "د", root3: "ل", form: "6", tense: "present", pronoun: :he})
