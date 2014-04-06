@@ -39,11 +39,17 @@ describe "Form V" do
     end
   end
 
-
   context 'regular present' do
     it 'conjugates formV present' do
       verb = Verb.new({root1: "ع", root2: "ر", root3: "ف", form: "5", tense: "present", pronoun: :you_m})
       expect(verb.conjugate).to eq("تتعرّف")
+    end
+  end
+
+  context 'assimilated present' do
+    it 'conjugates form V assimilated present' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ر", form: "5", tense: "present", pronoun: :he})
+      expect(verb.conjugate).to eq("يتوفّر")
     end
   end
 
