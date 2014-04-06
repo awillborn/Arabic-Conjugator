@@ -36,11 +36,24 @@ describe "Form X" do
     end
   end
 
+  context "assimilated past" do
+    it 'conjugates form X assimilated past' do
+      verb = Verb.new({root1: "و", root2: "ع", root3: "ب", form: "10", tense: "past", pronoun: :we})
+      expect(verb.conjugate).to eq("استوعبنا")
+    end
+  end
 
   context 'regular present' do
     it 'conjugates form X regular present' do
       verb = Verb.new({root1: "ك", root2: "ش", root3: "ف", form: "10", tense: "present", pronoun: :you_pl})
       expect(verb.conjugate).to eq("تستكشفون")
+    end
+  end
+
+  context "assimilated present" do
+    it 'conjugates form X assimilated present' do
+      verb = Verb.new({root1: "و", root2: "ع", root3: "ب", form: "10", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يستوعبون")
     end
   end
 

@@ -30,4 +30,8 @@ class FormXPastBase < Base
     end
   end
 
+  def assimilated_base
+    @base
+  end
+
 end
