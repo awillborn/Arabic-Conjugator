@@ -70,6 +70,13 @@ describe "Form IV" do
     end
   end
 
+  context 'doubled present' do
+    it 'conjugates form IV doubled present' do
+      verb = Verb.new({root1: "ض", root2: "ر", root3: "ر", form: "4", tense: "present", pronoun: :I})
+      expect(verb.conjugate).to eq("أضرّ")
+    end
+  end
+
   context 'defective present' do
     it 'conjugates form IV defective present, :you_pl' do
       verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "present", pronoun: :you_pl})
