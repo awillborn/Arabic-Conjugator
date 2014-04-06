@@ -61,9 +61,21 @@ describe "Form V" do
   end
 
   context 'doubled present' do
-    it 'conjugates formV doubled present' do
+    it 'conjugates form V doubled present' do
       verb = Verb.new({root1: "ض", root2: "ر", root3: "ر", form: "5", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تتضرّر")
+    end
+  end
+
+  context "defective present" do
+    it 'conjugates form V defective present, :you_m' do
+      verb = Verb.new({root1: "ح", root2: "د", root3: "ي", form: "5", tense: "present", pronoun: :you_m})
+      expect(verb.conjugate).to eq("تتحدّى")
+    end
+
+    it 'conjugates form V defective present, :you_f' do
+      verb = Verb.new({root1: "ح", root2: "د", root3: "ي", form: "5", tense: "present", pronoun: :you_f})
+      expect(verb.conjugate).to eq("تتحدّين")
     end
   end
 end
