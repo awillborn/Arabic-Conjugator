@@ -28,4 +28,8 @@ class FormIIIPastBase < Base
     end
   end
 
+  def hollow_base
+    @base
+  end
+
 end

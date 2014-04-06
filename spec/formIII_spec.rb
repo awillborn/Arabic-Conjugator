@@ -26,6 +26,13 @@ describe "Form III" do
     end
   end
 
+  context "hollow past" do
+    it 'conjugates formIII hollow past' do
+      verb = Verb.new({root1: "ح", root2: "و", root3: "ل", form: "3", tense: "past", pronoun: :we})
+      expect(verb.conjugate).to eq("حاولنا")
+    end
+  end
+
   context 'regular present' do
     it 'conjugates formIII regular present' do
       verb = Verb.new({root1: "ش", root2: "ه", root3: "د", form: "3", tense: "present", pronoun: :you_pl})
