@@ -23,7 +23,7 @@ class Verb
   end
 
   def find_types
-    TypeFactory.new(@root1, @root2, @root3).load_types
+    TypeFactory.new(@root1, @root2, @root3, @form).load_types
   end
 
   def find_base

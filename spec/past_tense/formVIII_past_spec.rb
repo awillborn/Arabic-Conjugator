@@ -57,11 +57,12 @@ describe "Form VIII Past" do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ق", form: "8", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("اتّفقوا")
     end
+  end
 
-    xit 'conjugates form VIII assimilated past with root1 Thal' do
+  context "infixed taa past" do
+    it 'conjugates form VIII assimilated past with root1 Thal' do
       verb = Verb.new({root1: "ظ", root2: "ل", root3: "م", form: "8", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("اظّلم")
     end
   end
-
 end

@@ -3,10 +3,11 @@
 class TypeFactory
   attr_reader :type
 
-  def initialize(root1, root2, root3)
+  def initialize(root1, root2, root3, form)
     @root1 = root1
     @root2 = root2
     @root3 = root3
+    @form = form
   end
 
   def load_types
@@ -15,6 +16,7 @@ class TypeFactory
     types << "defective" if defective?
     types << "doubled" if doubled?
     types << "assimilated" if assimilated?
+    types << "infixed_taa" if infixed_taa?
     types << "regular" if types.empty?
     types
   end
@@ -33,6 +35,10 @@ class TypeFactory
 
   def assimilated?
     @root1 == "و" || @root1 == "ي"
+  end
+
+  def infixed_taa?
+    @form == "8" && ["ت", "ث", "د", "ذ", "ز", "ص", "ض", "ط", "ظ"].include?(@root1)
   end
 
 end

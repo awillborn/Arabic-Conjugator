@@ -45,7 +45,8 @@ class BaseFactory
     "defective" => "defective_base",
     "hollow" => "hollow_base",
     "doubled" => "doubled_base",
-    "regular" => "regular_base"
+    "regular" => "regular_base",
+    "infixed_taa" => "infixed_taa_base"
   }
 
   def initialize(verb)
