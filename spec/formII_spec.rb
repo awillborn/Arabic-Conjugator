@@ -49,6 +49,11 @@ describe "Form II" do
       verb = Verb.new({root1: "ع", root2: "ر", root3: "ف", form: "2", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يعرّفون")
     end
+
+    it 'conjugates form II regular present with first radical hamza' do
+      verb = Verb.new({root1: "ء", root2: "ث", root3: "ر", form: "2", tense: "present", pronoun: :they})
+        expect(verb.conjugate).to eq("يؤثّرون")
+    end
   end
 
   context 'doubled present' do

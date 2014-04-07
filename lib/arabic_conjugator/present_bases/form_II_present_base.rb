@@ -15,4 +15,8 @@ class FormIIPresentBase < Base
     @base
   end
 
+  def adjust_first_radical
+    @root1 = "ؤ"
+  end
+
 end
