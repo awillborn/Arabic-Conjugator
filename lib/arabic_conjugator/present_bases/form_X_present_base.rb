@@ -11,4 +11,8 @@ class FormXPresentBase < Base
     @base[0...-1] + "ّ"
   end
 
+  def adjust_first_radical
+    @root1 = "أ"
+  end
+
 end
