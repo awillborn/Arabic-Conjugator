@@ -10,6 +10,11 @@ describe "Form III" do
       verb = Verb.new({root1: "ش", root2: "ه", root3: "د", form: "3", tense: "past", pronoun: :you_pl})
      expect(verb.conjugate).to eq("شاهدتم")
     end
+
+    it 'conjugates form III regular past with first radical hamza' do
+      verb = Verb.new({root1: "ء", root2: "ك", root3: "ل", form: "3", tense: "past", pronoun: :you_pl})
+        expect(verb.conjugate).to eq("آكلتم")
+    end
   end
 
   context "defective past" do

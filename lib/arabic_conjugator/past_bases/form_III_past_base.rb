@@ -6,7 +6,7 @@ class FormIIIPastBase < Base
 
   def initialize(verb)
     super
-    @base = @root1 + "ا" + @root2 + @root3
+    @base = calculate_base
   end
 
   def defective_base
@@ -17,6 +17,19 @@ class FormIIIPastBase < Base
       @base + "ى"
     else
       @base
+    end
+  end
+
+  def adjust_first_radical
+    p "inside adjust first radical"
+    @root1 = "آ"
+  end
+
+  def calculate_base
+    if @root1 == "آ"
+      @root1 + @root2 + @root3
+    else
+      @root1 + "ا" + @root2 + @root3
     end
   end
 
