@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'spec_helper'
+
 describe "Form I Present" do
 
   context "regular present" do
@@ -44,6 +46,11 @@ describe "Form I Present" do
     it 'conjugates form I defective past with final root yaa' do
       verb = Verb.new({root1: "د", root2: "ع", root3: "ي", form: "1", tense: "present", pronoun: :we})
       expect(verb.conjugate).to eq("ندعي")
+    end
+
+    it 'conjugates form I doubly weak verbs with second radical waaw and final radical yaa' do
+      verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يروون")
     end
   end
 

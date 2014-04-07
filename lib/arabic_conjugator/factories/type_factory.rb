@@ -12,14 +12,18 @@ class TypeFactory
 
   def load_types
     types = []
-    types << "hollow" if hollow?
     types << "defective" if defective?
-    types << "doubled" if doubled?
+    types << "hollow" if hollow?
     types << "assimilated" if assimilated?
     types << "assimilated_taa" if assimilated_taa?
     types << "morphed_taa" if morphed_taa?
+    types << "doubled" if doubled?
     types << "regular" if types.empty?
     types
+  end
+
+  def first_third_weak
+
   end
 
   def hollow?
