@@ -33,6 +33,13 @@ describe "Form VIII Present" do
     end
   end
 
+  context "infixed taa present" do
+    it 'conjugates form VIII infixed taa present with root1 Thal' do
+      verb = Verb.new({root1: "ظ", root2: "ل", root3: "م", form: "8", tense: "present", pronoun: :he})
+      expect(verb.conjugate).to eq("يظّلم")
+    end
+  end
+
   context "doubled present" do
     it 'conjugates form VIII doubled present' do
       verb = Verb.new({root1: "م", root2: "د", root3: "د", form: "8", tense: "present", pronoun: :we})

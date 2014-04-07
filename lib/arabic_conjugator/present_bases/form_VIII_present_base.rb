@@ -24,6 +24,10 @@ class FormVIIIPresentBase < Base
     @base[0...-1] + "ّ"
   end
 
+  def infixed_taa_base
+    @root1 + "ّ" + @root2 + @root3
+  end
+
   def adjust_first_radical
     @root1 = "أ"
   end
