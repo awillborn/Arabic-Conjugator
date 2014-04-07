@@ -57,6 +57,11 @@ describe "Form I Past" do
       verb = Verb.new({root1: "ر", root2: "د", root3: "د", form: "1", tense: "past", pronoun: :she})
       expect(verb.conjugate).to eq("ردّت")
     end
+
+    it 'conjugates form I doubled assimilated past' do
+      verb = Verb.new({root1: "و", root2: "د", root3: "د", form: "1", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("ودّت")
+    end
   end
 
 end
