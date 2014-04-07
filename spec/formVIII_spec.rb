@@ -19,6 +19,11 @@ describe "Form VIII" do
       verb = Verb.new({root1: "ب", root2: "ء", root3: "س", form: "8", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("ابتأس")
     end
+
+    it 'conjugates form VIII past with third radical hamza' do
+      verb = Verb.new({root1: "ب", root2: "د", root3: "ء", form: "8", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("ابتدأ")
+    end
   end
 
   context "defective past" do
@@ -73,6 +78,11 @@ describe "Form VIII" do
     it 'conjugates form VIII present with second radical hamza' do
       verb = Verb.new({root1: "ب", root2: "ء", root3: "س", form: "8", tense: "present", pronoun: :he})
       expect(verb.conjugate).to eq("يبتئس")
+    end
+
+    it 'conjugates form VIII present with third radical hamza' do
+      verb = Verb.new({root1: "ب", root2: "د", root3: "ء", form: "8", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يبتدئون")
     end
   end
 

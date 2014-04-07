@@ -31,4 +31,8 @@ class FormVIIIPastBase < Base
     @root2 = "أ"
   end
 
+  def adjust_third_radical
+    @root3 = "أ"
+  end
+
 end

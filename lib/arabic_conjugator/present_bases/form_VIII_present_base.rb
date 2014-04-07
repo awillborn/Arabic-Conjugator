@@ -32,4 +32,8 @@ class FormVIIIPresentBase < Base
     @root2 = "ئ"
   end
 
+  def adjust_third_radical
+    @root3 = "ئ"
+  end
+
 end
