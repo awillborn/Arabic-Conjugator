@@ -15,13 +15,16 @@ class FormVIIIPastBase < Base
     if [:he, :she, :they].include?(@pronoun)
       @base
     else
-      @base = "ا" + @root1 + "ت" + @root3
-      @base
+      "ا" + @root1 + "ت" + @root3
     end
   end
 
   def assimilated_base
     "اتّ" + @root2 + @root3
+  end
+
+  def adjust_first_radical
+    @root1 = "ئ"
   end
 
 end
