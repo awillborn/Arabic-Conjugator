@@ -26,6 +26,16 @@ class FormVIPresentBase < Base
     @root2 = "ء"
   end
 
+  def adjust_third_radical
+    if [:they, :you_pl].include?(@pronoun)
+      @root3 = "ؤ"
+    elsif @pronoun == :you_f
+      @root3 == "ئ"
+    else
+      @root3 == "أ"
+    end
+  end
+
   def calculate_base
     if @root1 == "آ"
       "ت" + @root1 + @root2 + @root3

@@ -15,9 +15,14 @@ describe "Form VI" do
       expect(verb.conjugate).to eq("تآلفنا")
     end
 
-    it 'conjugates form VI with second radical hamza' do
+    it 'conjugates form VI past with second radical hamza' do
       verb = Verb.new({root1: "س", root2: "ء", root3: "ل", form: "6", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("تساءلوا")
+    end
+
+    it 'conjugates form VI past with third radical hamza' do
+      verb = Verb.new({root1: "ك", root2: "ف", root3: "ء", form: "6", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("تكافأوا")
     end
   end
 
@@ -48,14 +53,19 @@ describe "Form VI" do
       expect(verb.conjugate).to eq("يتبادل")
     end
 
-    it 'conjugates form VI with first radical hamza' do
+    it 'conjugates form VI present with first radical hamza' do
       verb = Verb.new({root1: "ء", root2: "ل", root3: "ف", form: "6", tense: "present", pronoun: :we})
       expect(verb.conjugate).to eq("نتآلف")
     end
 
-    it 'conjugates form VI with second radical hamza' do
+    it 'conjugates form VI present with second radical hamza' do
       verb = Verb.new({root1: "س", root2: "ء", root3: "ل", form: "6", tense: "present", pronoun: :we})
       expect(verb.conjugate).to eq("نتساءل")
+    end
+
+    it 'conjugates form VI present with third radical hamza' do
+      verb = Verb.new({root1: "ك", root2: "ف", root3: "ء", form: "6", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يتكافؤون")
     end
   end
 
