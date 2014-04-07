@@ -22,4 +22,8 @@ class FormXPastBase < Base
     @root1 = "أ"
   end
 
+  def adjust_third_radical
+    @root3 = "أ"
+  end
+
 end
