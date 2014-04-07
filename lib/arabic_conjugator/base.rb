@@ -11,6 +11,9 @@ class Base
     @root2 = verb.root2
     @root3 = verb.root3
     @pronoun = verb.pronoun
+    adjust_first_radical if @root1 == "ء"
+    adjust_second_radical if @root2 == "ء"
+    adjust_third_radical if @root3 == "ء"
   end
 
   def regular_base
