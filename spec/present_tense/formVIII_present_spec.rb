@@ -45,6 +45,11 @@ describe "Form VIII Present" do
       verb = Verb.new({root1: "ص", root2: "د", root3: "م", form: "8", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يصطدمون")
     end
+
+    it 'conjugates form VIII morphed taa present with first radical zaa' do
+      verb = Verb.new({root1: "ز", root2: "ح", root3: "م", form: "8", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تزدحم")
+    end
   end
 
   context "doubled present" do
