@@ -9,6 +9,11 @@ describe "Form II" do
       verb = Verb.new({root1: "ع", root2: "ر", root3: "ف", form: "2", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("عرّفوا")
     end
+
+    it 'conjugates form II regular past with first radical hamza' do
+      verb = Verb.new({root1: "ء", root2: "ث", root3: "ر", form: "2", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("أثّروا")
+    end
   end
 
   context "defective past" do
