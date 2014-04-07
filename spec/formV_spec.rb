@@ -55,6 +55,11 @@ describe "Form V" do
       expect(verb.conjugate).to eq("تتعرّف")
     end
 
+    it 'conjugates form V present with first radical hamza' do
+      verb = Verb.new({root1: "ء", root2: "ث", root3: "ر", form: "5", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تتأثّر")
+    end
+
     it 'conjugates form V present with third radical hamza' do
       verb = Verb.new({root1: "ن", root2: "ب", root3: "ء", form: "5", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تتنبّأ")
