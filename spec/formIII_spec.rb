@@ -15,6 +15,11 @@ describe "Form III" do
       verb = Verb.new({root1: "ء", root2: "ك", root3: "ل", form: "3", tense: "past", pronoun: :you_pl})
         expect(verb.conjugate).to eq("آكلتم")
     end
+
+    it 'conjugates form III regular past with second radical hamza' do
+      verb = Verb.new({root1: "س", root2: "ء", root3: "ل", form: "3", tense: "past", pronoun: :you_pl})
+        expect(verb.conjugate).to eq("ساءلتم")
+    end
   end
 
   context "defective past" do
@@ -47,6 +52,11 @@ describe "Form III" do
     it 'conjugates form III regular present with first radical hamza' do
       verb = Verb.new({root1: "ء", root2: "ك", root3: "ل", form: "3", tense: "present", pronoun: :they})
         expect(verb.conjugate).to eq("يؤاكلون")
+    end
+
+    it 'conjugates form III regular present with second radical hamza' do
+      verb = Verb.new({root1: "س", root2: "ء", root3: "ل", form: "3", tense: "present", pronoun: :they})
+        expect(verb.conjugate).to eq("يسائلون")
     end
   end
 

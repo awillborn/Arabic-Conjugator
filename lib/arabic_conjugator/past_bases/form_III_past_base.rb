@@ -21,8 +21,11 @@ class FormIIIPastBase < Base
   end
 
   def adjust_first_radical
-    p "inside adjust first radical"
     @root1 = "آ"
+  end
+
+  def adjust_second_radical
+    @root2 = "ء"
   end
 
   def calculate_base

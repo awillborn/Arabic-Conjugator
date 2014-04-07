@@ -19,4 +19,8 @@ class FormIIIPresentBase < Base
     @root1 = "ؤ"
   end
 
+  def adjust_second_radical
+    @root2 = "ئ"
+  end
+
 end
