@@ -5,9 +5,14 @@ require 'spec_helper'
 describe "Form VII" do
 
   context "regular past" do
-    it 'conjugates formVII past' do
+    it 'conjugates form VII past' do
       verb = Verb.new({root1: "ق", root2: "ط", root3: "ع", form: "7", tense: "past", pronoun: :she})
       expect(verb.conjugate).to eq("انقطعت")
+    end
+
+    it 'conjugates form VII past with final radical hamza' do
+      verb = Verb.new({root1: "ط", root2: "ف", root3: "ء", form: "7", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("انطفأت")
     end
   end
 
@@ -46,6 +51,11 @@ describe "Form VII" do
     it 'conjugates formVII present' do
       verb = Verb.new({root1: "ق", root2: "ط", root3: "ع", form: "7", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تنقطع")
+    end
+
+    it 'conjugates form VII present with final radical hamza' do
+      verb = Verb.new({root1: "ط", root2: "ف", root3: "ء", form: "7", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تنطفئ")
     end
   end
 

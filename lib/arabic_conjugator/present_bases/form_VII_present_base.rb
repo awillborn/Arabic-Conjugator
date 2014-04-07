@@ -24,4 +24,8 @@ class FormVIIPresentBase < Base
     @root1 = "أ"
   end
 
+  def adjust_third_radical
+    @root3 = "ئ"
+  end
+
 end
