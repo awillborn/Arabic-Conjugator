@@ -23,4 +23,8 @@ class FormIPresentBase < Base
     end
   end
 
+  def adjust_first_radical
+    @root1 = "أ"
+  end
+
 end
