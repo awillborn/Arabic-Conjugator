@@ -28,6 +28,10 @@ class FormIIIPastBase < Base
     @root2 = "ء"
   end
 
+  def adjust_third_radical
+    @root3 = "أ"
+  end
+
   def calculate_base
     if @root1 == "آ"
       @root1 + @root2 + @root3

@@ -6,7 +6,7 @@ require 'spec_helper'
 describe "Form III" do
 
   context "regular past" do
-    it 'conjugates formIII correctly' do
+    it 'conjugates formIII' do
       verb = Verb.new({root1: "ش", root2: "ه", root3: "د", form: "3", tense: "past", pronoun: :you_pl})
      expect(verb.conjugate).to eq("شاهدتم")
     end
@@ -19,6 +19,11 @@ describe "Form III" do
     it 'conjugates form III regular past with second radical hamza' do
       verb = Verb.new({root1: "س", root2: "ء", root3: "ل", form: "3", tense: "past", pronoun: :you_pl})
         expect(verb.conjugate).to eq("ساءلتم")
+    end
+
+    it 'conjugates form III regular past with third radical hamza' do
+      verb = Verb.new({root1: "ف", root2: "ج", root3: "ء", form: "3", tense: "past", pronoun: :she})
+        expect(verb.conjugate).to eq("فاجأت")
     end
   end
 
@@ -57,6 +62,11 @@ describe "Form III" do
     it 'conjugates form III regular present with second radical hamza' do
       verb = Verb.new({root1: "س", root2: "ء", root3: "ل", form: "3", tense: "present", pronoun: :they})
         expect(verb.conjugate).to eq("يسائلون")
+    end
+
+    it 'conjugates form III regular present with third radical hamza' do
+      verb = Verb.new({root1: "ف", root2: "ج", root3: "ء", form: "3", tense: "present", pronoun: :we})
+        expect(verb.conjugate).to eq("نفاجئ")
     end
   end
 
