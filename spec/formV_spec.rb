@@ -5,9 +5,14 @@ require 'spec_helper'
 describe "Form V" do
 
   context "regular past" do
-    it 'conjugates formV past' do
+    it 'conjugates form V past' do
       verb = Verb.new({root1: "ع", root2: "ر", root3: "ف", form: "5", tense: "past", pronoun: :you_f})
       expect(verb.conjugate).to eq("تعرّفت")
+    end
+
+    it 'conjugates form V past with first radical hamza' do
+      verb = Verb.new({root1: "ء", root2: "ث", root3: "ر", form: "5", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("تأثّر")
     end
   end
 
@@ -50,6 +55,11 @@ describe "Form V" do
     it 'conjugates form V assimilated present' do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ر", form: "5", tense: "present", pronoun: :he})
       expect(verb.conjugate).to eq("يتوفّر")
+    end
+
+    it 'conjugates form V present with first radical hamza' do
+      verb = Verb.new({root1: "ء", root2: "ث", root3: "ر", form: "5", tense: "present", pronoun: :he})
+      expect(verb.conjugate).to eq("يتأثّر")
     end
   end
 
