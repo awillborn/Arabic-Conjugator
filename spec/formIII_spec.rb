@@ -43,6 +43,11 @@ describe "Form III" do
       verb = Verb.new({root1: "ش", root2: "ه", root3: "د", form: "3", tense: "present", pronoun: :you_pl})
       expect(verb.conjugate).to eq("تشاهدون")
     end
+
+    it 'conjugates form III regular present with first radical hamza' do
+      verb = Verb.new({root1: "ء", root2: "ك", root3: "ل", form: "3", tense: "present", pronoun: :they})
+        expect(verb.conjugate).to eq("يؤاكلون")
+    end
   end
 
   context 'defective present' do
