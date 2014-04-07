@@ -5,9 +5,14 @@ require 'spec_helper'
 describe "Form IV" do
 
   context "regular past" do
-    it 'conjugates formIV past' do
+    it 'conjugates formIV regular past' do
       verb = Verb.new({root1: "ر", root2: "س", root3: "ل", form: "4", tense: "past", pronoun: :you_pl})
       expect(verb.conjugate).to eq("أرسلتم")
+    end
+
+    it 'conjugates formIV regular past with hamza as first radical' do
+      verb = Verb.new({root1: "ء", root2: "ل", root3: "م", form: "4", tense: "past", pronoun: :you_m})
+      expect(verb.conjugate).to eq("آلمت")
     end
   end
 

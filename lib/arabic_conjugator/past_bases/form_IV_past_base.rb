@@ -6,7 +6,7 @@ class FormIVPastBase < Base
 
   def initialize(verb)
     super
-    @base = "أ" + @root1 + @root2 + @root3
+    @base = calculate_base
   end
 
   def hollow_base
@@ -15,6 +15,18 @@ class FormIVPastBase < Base
     else
       "أ" + @root1 + @root3
     end
+  end
+
+  def calculate_base
+    if @root1 == "آ"
+      @root1 + @root2 + @root3
+    else
+      "أ" + @root1 + @root2 + @root3
+    end
+  end
+
+  def adjust_first_radical
+    @root1 = "آ"
   end
 
 end
