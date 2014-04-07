@@ -23,8 +23,16 @@ class FormVIIIPastBase < Base
     "اتّ" + @root2 + @root3
   end
 
-  def infixed_taa_base
+  def assimilated_taa_base
     "ا" + @root1 + "ّ" + @root2 + @root3
+  end
+
+  def morphed_taa_base
+    if ["ز", "ذ"].include?(@root1)
+      "ا" + @root1 + "د" + @root2 + @root3
+    else
+      "ا" + @root1 + "ط" + @root2 + @root3
+    end
   end
 
   def adjust_first_radical

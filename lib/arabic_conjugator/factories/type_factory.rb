@@ -16,7 +16,8 @@ class TypeFactory
     types << "defective" if defective?
     types << "doubled" if doubled?
     types << "assimilated" if assimilated?
-    types << "infixed_taa" if infixed_taa?
+    types << "assimilated_taa" if assimilated_taa?
+    types << "morphed_taa" if morphed_taa?
     types << "regular" if types.empty?
     types
   end
@@ -37,8 +38,12 @@ class TypeFactory
     @root1 == "و" || @root1 == "ي"
   end
 
-  def infixed_taa?
-    @form == "8" && ["ت", "ث", "د", "ذ", "ز", "ص", "ض", "ط", "ظ"].include?(@root1)
+  def assimilated_taa?
+    @form == "8" && ["ت", "ث", "د", "ط", "ظ"].include?(@root1)
+  end
+
+  def morphed_taa?
+    @form == "8" && ["ذ", "ز", "ص", "ض"].include?(@root1)
   end
 
 end

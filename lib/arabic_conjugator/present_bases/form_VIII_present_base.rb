@@ -24,8 +24,16 @@ class FormVIIIPresentBase < Base
     @base[0...-1] + "ّ"
   end
 
-  def infixed_taa_base
+  def assimilated_taa_base
     @root1 + "ّ" + @root2 + @root3
+  end
+
+  def morphed_taa_base
+    if ["ز", "ذ"].include?(@root1)
+      @root1 + "د" + @root2 + @root3
+    else
+      @root1 + "ط" + @root2 + @root3
+    end
   end
 
   def adjust_first_radical

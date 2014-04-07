@@ -46,7 +46,8 @@ class BaseFactory
     "hollow" => "hollow_base",
     "doubled" => "doubled_base",
     "regular" => "regular_base",
-    "infixed_taa" => "infixed_taa_base"
+    "assimilated_taa" => "assimilated_taa_base",
+    "morphed_taa" => "morphed_taa_base"
   }
 
   def initialize(verb)
