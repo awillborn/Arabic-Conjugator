@@ -23,4 +23,8 @@ class FormIVPresentBase < Base
     @base[0...-1] + "ّ"
   end
 
+  def adjust_first_radical
+    @root1 = "ؤ"
+  end
+
 end

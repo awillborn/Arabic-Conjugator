@@ -59,6 +59,11 @@ describe "Form IV" do
       verb = Verb.new({root1: "ر", root2: "س", root3: "ل", form: "4", tense: "present", pronoun: :you_pl})
       expect(verb.conjugate).to eq("ترسلون")
     end
+
+    it 'conjugates form IV regular present with hamza as first radical' do
+      verb = Verb.new({root1: "ء", root2: "ل", root3: "م", form: "4", tense: "present", pronoun: :you_m})
+      expect(verb.conjugate).to eq("تؤلم")
+    end
   end
 
   context 'hollow present' do
