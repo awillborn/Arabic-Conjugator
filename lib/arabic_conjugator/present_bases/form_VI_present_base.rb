@@ -7,7 +7,7 @@ class FormVIPresentBase < Base
 
   def initialize(verb)
     super
-    @base =  "ت" + @root1 + "ا" + @root2 + @root3
+    @base = calculate_base
   end
 
   def defective_base
@@ -15,6 +15,18 @@ class FormVIPresentBase < Base
       @base[0...-1]
     else
       @base[0...-1] + "ى"
+    end
+  end
+
+  def adjust_first_radical
+    @root1 = "آ"
+  end
+
+  def calculate_base
+    if @root1 == "آ"
+      "ت" + @root1 + @root2 + @root3
+    else
+      "ت" + @root1 + "ا" + @root2 + @root3
     end
   end
 

@@ -6,7 +6,7 @@ class FormVIPastBase < Base
 
   def initialize(verb)
     super
-    @base =  "ت" + @root1 + "ا" + @root2 + @root3
+    @base = calculate_base
   end
 
   def defective_base
@@ -15,6 +15,18 @@ class FormVIPastBase < Base
       @base + "ا"
     elsif @root3 == "ي" && @pronoun == :he
       @base + "ى"
+    end
+  end
+
+  def adjust_first_radical
+    @root1 = "آ"
+  end
+
+  def calculate_base
+    if @root1 == "آ"
+      "ت" + @root1 + @root2 + @root3
+    else
+      "ت" + @root1 + "ا" + @root2 + @root3
     end
   end
 

@@ -5,9 +5,14 @@ require 'spec_helper'
 describe "Form VI" do
 
   context "regular past" do
-    it 'conjugates formVI correctly' do
+    it 'conjugates form VI' do
       verb = Verb.new({root1: "ب", root2: "د", root3: "ل", form: "6", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("تبادل")
+    end
+
+    it 'conjugates form VI with first radical hamza' do
+      verb = Verb.new({root1: "ء", root2: "ل", root3: "ف", form: "6", tense: "past", pronoun: :we})
+      expect(verb.conjugate).to eq("تآلفنا")
     end
   end
 
@@ -36,6 +41,11 @@ describe "Form VI" do
     it 'conjugates formVI present' do
       verb = Verb.new({root1: "ب", root2: "د", root3: "ل", form: "6", tense: "present", pronoun: :he})
       expect(verb.conjugate).to eq("يتبادل")
+    end
+
+    it 'conjugates form VI with first radical hamza' do
+      verb = Verb.new({root1: "ء", root2: "ل", root3: "ف", form: "6", tense: "present", pronoun: :we})
+      expect(verb.conjugate).to eq("نتآلف")
     end
   end
 
