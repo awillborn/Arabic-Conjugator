@@ -14,6 +14,11 @@ describe "Form V" do
       verb = Verb.new({root1: "ء", root2: "ث", root3: "ر", form: "5", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("تأثّر")
     end
+
+    it 'conjugates form V past with third radical hamza' do
+      verb = Verb.new({root1: "ن", root2: "ب", root3: "ء", form: "5", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("تنبّأ")
+    end
   end
 
   context "defective past" do
@@ -48,6 +53,11 @@ describe "Form V" do
     it 'conjugates formV present' do
       verb = Verb.new({root1: "ع", root2: "ر", root3: "ف", form: "5", tense: "present", pronoun: :you_m})
       expect(verb.conjugate).to eq("تتعرّف")
+    end
+
+    it 'conjugates form V present with third radical hamza' do
+      verb = Verb.new({root1: "ن", root2: "ب", root3: "ء", form: "5", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تتنبّأ")
     end
   end
 
