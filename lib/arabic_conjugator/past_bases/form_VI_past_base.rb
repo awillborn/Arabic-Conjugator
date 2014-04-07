@@ -22,6 +22,10 @@ class FormVIPastBase < Base
     @root1 = "آ"
   end
 
+  def adjust_second_radical
+    @root2 = "ء"
+  end
+
   def calculate_base
     if @root1 == "آ"
       "ت" + @root1 + @root2 + @root3

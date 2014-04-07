@@ -14,6 +14,11 @@ describe "Form VI" do
       verb = Verb.new({root1: "ء", root2: "ل", root3: "ف", form: "6", tense: "past", pronoun: :we})
       expect(verb.conjugate).to eq("تآلفنا")
     end
+
+    it 'conjugates form VI with second radical hamza' do
+      verb = Verb.new({root1: "س", root2: "ء", root3: "ل", form: "6", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("تساءلوا")
+    end
   end
 
   context "defective past" do
@@ -46,6 +51,11 @@ describe "Form VI" do
     it 'conjugates form VI with first radical hamza' do
       verb = Verb.new({root1: "ء", root2: "ل", root3: "ف", form: "6", tense: "present", pronoun: :we})
       expect(verb.conjugate).to eq("نتآلف")
+    end
+
+    it 'conjugates form VI with second radical hamza' do
+      verb = Verb.new({root1: "س", root2: "ء", root3: "ل", form: "6", tense: "present", pronoun: :we})
+      expect(verb.conjugate).to eq("نتساءل")
     end
   end
 
