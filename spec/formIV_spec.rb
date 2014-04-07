@@ -14,6 +14,11 @@ describe "Form IV" do
       verb = Verb.new({root1: "ء", root2: "ل", root3: "م", form: "4", tense: "past", pronoun: :you_m})
       expect(verb.conjugate).to eq("آلمت")
     end
+
+    it 'conjugates formIV regular past with hamza as second radical' do
+      verb = Verb.new({root1: "س", root2: "ء", root3: "م", form: "4", tense: "past", pronoun: :you_f})
+      expect(verb.conjugate).to eq("أسأمت")
+    end
   end
 
   context "defective past" do
@@ -63,6 +68,11 @@ describe "Form IV" do
     it 'conjugates form IV regular present with hamza as first radical' do
       verb = Verb.new({root1: "ء", root2: "ل", root3: "م", form: "4", tense: "present", pronoun: :you_m})
       expect(verb.conjugate).to eq("تؤلم")
+    end
+
+    it 'conjugates formIV regular present with hamza as second radical' do
+      verb = Verb.new({root1: "س", root2: "ء", root3: "م", form: "4", tense: "present", pronoun: :you_f})
+      expect(verb.conjugate).to eq("تسئمين")
     end
   end
 
