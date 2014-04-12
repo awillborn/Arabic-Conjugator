@@ -50,6 +50,11 @@ describe "Form I Present" do
       verb = Verb.new({root1: "ق", root2: "و", root3: "ل", form: "1", tense: "present", pronoun: :he})
       expect(verb.conjugate).to eq("يقول")
     end
+
+    it 'conjugates form I hollow present with third radical hamza, :he' do
+      verb = Verb.new({root1: "ج", root2: "ي", root3: "ء", form: "1", tense: "present", pronoun: :I})
+        expect(verb.conjugate).to eq("أجيئ")
+    end
   end
 
   context "defective present" do
