@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+require_relative '../form_I_hamzated'
 require_relative '../base'
 
 class FormIPastBase < Base
@@ -35,6 +35,16 @@ class FormIPastBase < Base
 
   def adjust_first_radical
     @root1 = "أ"
+  end
+
+  def adjust_second_radical
+    base = @root1 + @root2 + @root3
+    @root2 = FORM_I_HAMZATED[base]
+  end
+
+  def adjust_third_radical
+    base = @root1 + @root2 + @root3
+    @root3 = FORM_I_HAMZATED[base]
   end
 
 end

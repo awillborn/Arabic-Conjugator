@@ -14,6 +14,11 @@ describe "Form I Past" do
       verb = Verb.new({root1: "ء", root2: "ك", root3: "ل", form: "1", tense: "past", pronoun: :she})
       expect(verb.conjugate).to eq("أكلت")
     end
+
+    it 'conjugates form I regular past with second radical hamza' do
+      verb = Verb.new({root1: "س", root2: "ء", root3: "ل", form: "1", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("سألوا")
+    end
   end
 
   context "defective past" do
