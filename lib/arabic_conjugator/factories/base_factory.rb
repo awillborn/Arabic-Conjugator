@@ -40,16 +40,6 @@ class BaseFactory
     "10present" => FormXPresentBase
   }
 
-  TYPE_MAPPING = {
-    "assimilated" => "assimilated_base",
-    "defective" => "defective_base",
-    "hollow" => "hollow_base",
-    "doubled" => "doubled_base",
-    "regular" => "regular_base",
-    "assimilated_taa" => "assimilated_taa_base",
-    "morphed_taa" => "morphed_taa_base"
-  }
-
   def initialize(verb)
     @verb = verb
     @form_name = verb.form
@@ -58,8 +48,23 @@ class BaseFactory
   end
 
   def load_base
-    type = TYPE_MAPPING[@types]
-    FORM_MAPPING[@form_name.concat(@tense)].new(@verb).send(type)
+    form = FORM_MAPPING[@form_name.concat(@tense)].new(@verb)
+    case @types
+    when "assimilated"
+      form.assimilated_base
+    when "defective"
+      form.defective_base
+    when "hollow"
+      form.hollow_base
+    when "doubled"
+      form.doubled_base
+    when "regular"
+      form.regular_base
+    when "assimilated_taa"
+      form.assimilated_taa_base
+    when "morphed_taa"
+      form.morphed_taa_base
+    end
   end
 
 end
