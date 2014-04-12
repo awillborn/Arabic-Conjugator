@@ -44,9 +44,24 @@ describe "Form I Past" do
   end
 
   context "hollow past" do
-    it 'conjugates form I hollow past' do
+    it 'conjugates form I hollow past, :he' do
       verb = Verb.new({root1: "ق", root2: "و", root3: "ل", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("قال")
+    end
+
+    it 'conjugates form I hollow past, :you_f' do
+      verb = Verb.new({root1: "ق", root2: "و", root3: "ل", form: "1", tense: "past", pronoun: :you_f})
+      expect(verb.conjugate).to eq("قلت")
+    end
+
+    it 'conjugates form I hollow past with third radical hamza, :he' do
+      verb = Verb.new({root1: "ج", root2: "ي", root3: "ء", form: "1", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("جاء")
+    end
+
+    it 'conjugates form I hollow past with third radical hamza, :you_m' do
+      verb = Verb.new({root1: "ج", root2: "ي", root3: "ء", form: "1", tense: "past", pronoun: :you_m})
+      expect(verb.conjugate).to eq("جئت")
     end
   end
 

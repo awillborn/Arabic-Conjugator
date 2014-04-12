@@ -10,8 +10,15 @@ class FormIPastBase < Base
   end
 
   def hollow_base
-    @root2 = "ا"
-    @root1 + @root2 + @root3
+    if [:he, :she, :they].include?(@pronoun)
+      if @root3 == "ئ"
+         @root1 + "اء"
+      else
+        @root1 + "ا" + @root3
+      end
+    else
+      @root1 + @root3
+    end
   end
 
   def defective_base
