@@ -31,6 +31,11 @@ describe "Form IV Past" do
       verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "past", pronoun: :you_pl})
       expect(verb.conjugate).to eq("أجريتم")
     end
+
+    it 'conjugates formIV doubly weak past - defective and assimilated' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "4", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("أوفى")
+    end
   end
 
   context "hollow past" do

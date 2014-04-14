@@ -25,6 +25,10 @@ class FormIVPastBase < Base
     end
   end
 
+  def first_third_weak_base
+    defective_base
+  end
+
   def adjust_first_radical
     @root1 = "آ"
   end
