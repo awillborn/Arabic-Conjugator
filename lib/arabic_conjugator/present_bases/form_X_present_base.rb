@@ -11,6 +11,18 @@ class FormXPresentBase < Base
     @base[0...-1] + "ّ"
   end
 
+  def defective_base
+    if [:you_pl, :they, :you_f].include?(@pronoun)
+      @base[0...-1]
+    else
+      @base
+    end
+  end
+
+  def first_third_weak_base
+    defective_base
+  end
+
   def adjust_first_radical
     @root1 = "أ"
   end

@@ -26,6 +26,11 @@ describe "Form X Past" do
       verb = Verb.new({root1: "د", root2: "ع", root3: "ي", form: "10", tense: "past", pronoun: :we})
       expect(verb.conjugate).to eq("استدعينا")
     end
+
+    it 'conjugates form X defective-assimilated past' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "10", tense: "past", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("استوفيتم")
+    end
   end
 
   context 'doubled past' do

@@ -47,6 +47,11 @@ describe "Form X Present" do
       verb = Verb.new({root1: "د", root2: "ع", root3: "ي", form: "10", tense: "present", pronoun: :we})
       expect(verb.conjugate).to eq("نستدعي")
     end
+
+    it 'conjugates form X defective-assimilated present' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "10", tense: "present", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("تستوفون")
+    end
   end
 
 end
