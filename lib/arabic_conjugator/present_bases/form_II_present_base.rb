@@ -8,11 +8,19 @@ class FormIIPresentBase < Base
   end
 
   def defective_base
-    @base
+    if [:you_pl, :they, :you_f].include?(@pronoun)
+      @base[0...-1]
+    else
+      @base
+    end
   end
 
   def doubled_base
     @base
+  end
+
+  def first_third_weak_base
+    defective_base
   end
 
   def adjust_first_radical

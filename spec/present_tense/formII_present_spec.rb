@@ -33,6 +33,11 @@ describe "Form II Present" do
       verb = Verb.new({root1: "ص", root2: "ل", root3: "ي", form: "2", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تصلّي")
     end
+
+    it 'conjugates form II doubly weak verbs with first radical waaw and final radical yaa' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "2", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("توفّي")
+    end
   end
 
   context 'hollow present' do

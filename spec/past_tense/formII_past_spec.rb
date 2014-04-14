@@ -26,6 +26,11 @@ describe "Form II Past" do
       verb = Verb.new({root1: "س", root2: "م", root3: "ي", form: "2", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("سمّوا")
     end
+
+    it 'conjugates form II doubly weak verbs with first radical waaw and final radical yaa' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "2", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("وفّت")
+    end
   end
 
   context 'doubled past' do
