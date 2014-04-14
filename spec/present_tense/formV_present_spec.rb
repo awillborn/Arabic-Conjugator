@@ -57,6 +57,11 @@ describe "Form V Present" do
       verb = Verb.new({root1: "ح", root2: "د", root3: "ي", form: "5", tense: "present", pronoun: :you_f})
       expect(verb.conjugate).to eq("تتحدّين")
     end
+
+    it 'conjugates form V doubly weak defective present, first radical waaw' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "5", tense: "present", pronoun: :you_m})
+      expect(verb.conjugate).to eq("تتوفّى")
+    end
   end
 
 end
