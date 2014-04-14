@@ -42,4 +42,11 @@ describe "Form X Present" do
     end
   end
 
+  context "defective present" do
+    it 'conjugates form X defective present' do
+      verb = Verb.new({root1: "د", root2: "ع", root3: "ي", form: "10", tense: "present", pronoun: :we})
+      expect(verb.conjugate).to eq("نستدعي")
+    end
+  end
+
 end
