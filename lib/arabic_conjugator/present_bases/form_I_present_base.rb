@@ -25,6 +25,14 @@ class FormIPresentBase < Base
     end
   end
 
+  def first_third_weak_base
+    if [:you_pl, :they, :you_f].include?(@pronoun)
+      @root2
+    else
+      @root2 + @root3
+    end
+  end
+
   def adjust_first_radical
     @root1 = "أ"
   end

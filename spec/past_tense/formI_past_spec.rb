@@ -41,6 +41,11 @@ describe "Form I Past" do
       verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("روى")
     end
+
+    it 'conjugates form I doubly weak verbs with first radical waaw and final radical yaa' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "1", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("وفوا")
+    end
   end
 
   context "hollow past" do

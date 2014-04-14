@@ -72,6 +72,11 @@ describe "Form I Present" do
       verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يروون")
     end
+
+    it 'conjugates form I doubly weak verbs with first radical waaw and final radical yaa' do
+      verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "1", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يفون")
+    end
   end
 
 end

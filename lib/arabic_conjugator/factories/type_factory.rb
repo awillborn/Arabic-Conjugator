@@ -12,6 +12,7 @@ class TypeFactory
 
   def load_types
     types = []
+    types << "first_third_weak" if first_third_weak?
     types << "defective" if defective?
     types << "hollow" if hollow?
     types << "doubled" if doubled?
@@ -20,6 +21,10 @@ class TypeFactory
     types << "morphed_taa" if morphed_taa?
     types << "regular" if types.empty?
     types
+  end
+
+  def first_third_weak?
+    (@root1 == "و" || @root1 == "ي") && (@root3 == "و" || @root3 == "ي")
   end
 
   def hollow?
