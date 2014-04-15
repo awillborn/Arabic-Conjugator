@@ -9,13 +9,8 @@ class FormVIPastBase < Base
     @base = calculate_base
   end
 
-  def defective_base
-    @base = @base[0...-1]
-    if @root3 == "و" && @pronoun == :he
-      @base + "ا"
-    elsif @root3 == "ي" && @pronoun == :he
-      @base + "ى"
-    end
+  def first_third_weak_base
+    defective_base
   end
 
   def adjust_first_radical

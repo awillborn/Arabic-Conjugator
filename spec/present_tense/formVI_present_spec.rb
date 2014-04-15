@@ -43,6 +43,11 @@ describe "Form VI Present" do
       verb = Verb.new({root1: "ق", root2: "ض", root3: "ي", form: "6", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يتقاضون")
     end
+
+    it 'conjugates form VI defective-assimilated present' do
+      verb = Verb.new({root1: "و", root2: "ل", root3: "ي", form: "6", tense: "present", pronoun: :you_f})
+      expect(verb.conjugate).to eq("تتوالين")
+    end
   end
 
   context "hollow present" do
