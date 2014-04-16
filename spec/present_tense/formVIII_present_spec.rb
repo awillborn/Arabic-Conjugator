@@ -69,6 +69,11 @@ describe "Form VIII Present" do
       verb = Verb.new({root1: "و", root2: "ق", root3: "ي", form: "8", tense: "present", pronoun: :I})
       expect(verb.conjugate).to eq("أتّقي")
     end
+
+    it 'conjugates form VIII hollow-defective present' do
+      verb = Verb.new({root1: "ح", root2: "و", root3: "ي", form: "8", tense: "present", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("تحتوون")
+    end
   end
 
 end
