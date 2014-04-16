@@ -36,6 +36,11 @@ describe "Form VI Past" do
       verb = Verb.new({root1: "و", root2: "ل", root3: "ي", form: "6", tense: "past", pronoun: :you_f})
       expect(verb.conjugate).to eq("تواليت")
     end
+
+    it 'conjugates form VI hollow-assimilated past' do
+      verb = Verb.new({root1: "س", root2: "و", root3: "ي", form: "6", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("تساوت")
+    end
   end
 
   context "hollow past" do
