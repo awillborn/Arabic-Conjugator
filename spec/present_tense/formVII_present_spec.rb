@@ -35,6 +35,11 @@ describe "Form VII Present" do
       verb = Verb.new({root1: "ق", root2: "ض", root3: "ي", form: "7", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تنقضي")
     end
+
+    it 'conjugates formVII defective-hollow present' do
+      verb = Verb.new({root1: "ز", root2: "و", root3: "ي", form: "7", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تنزوي")
+    end
   end
 
 end

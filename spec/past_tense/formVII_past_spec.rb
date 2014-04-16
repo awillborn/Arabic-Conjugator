@@ -21,6 +21,11 @@ describe "Form VII Past" do
       verb = Verb.new({root1: "ق", root2: "ض", root3: "ي", form: "7", tense: "past", pronoun: :she})
       expect(verb.conjugate).to eq("انقضت")
     end
+
+    it 'conjugates formVII defective-hollow past' do
+      verb = Verb.new({root1: "ز", root2: "و", root3: "ي", form: "7", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("انزوت")
+    end
   end
 
   context "hollow past" do
