@@ -16,6 +16,14 @@ class FormVIIIPresentBase < Base
     @root1 + "ت" + @root2 + @root3
   end
 
+  def defective_base
+    if [:you_f, :you_pl, :they].include?(@pronoun)
+      @base[0...-1]
+    else
+      @base[0...-1] + "ي"
+    end
+  end
+
   def assimilated_base
     "تّ" + @root2 + @root3
   end
