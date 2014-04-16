@@ -31,6 +31,11 @@ describe "Form III Past" do
       verb = Verb.new({root1: "ن", root2: "د", root3: "ي", form: "3", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("نادى")
     end
+
+    it 'conjugates formIII hollow-defective past' do
+      verb = Verb.new({root1: "س", root2: "و", root3: "ي", form: "3", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("ساوى")
+    end
   end
 
   context "assimilated past" do

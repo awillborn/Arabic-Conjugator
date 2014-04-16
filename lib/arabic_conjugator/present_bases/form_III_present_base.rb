@@ -15,6 +15,10 @@ class FormIIIPresentBase < Base
     end
   end
 
+  def second_third_weak_base
+    defective_base
+  end
+
   def adjust_first_radical
     @root1 = "ؤ"
   end
