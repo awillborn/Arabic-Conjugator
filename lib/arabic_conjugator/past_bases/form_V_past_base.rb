@@ -20,10 +20,6 @@ class FormVPastBase < Base
     end
   end
 
-  def first_third_weak_base
-    defective_base
-  end
-
   def doubled_base
     @base
   end
