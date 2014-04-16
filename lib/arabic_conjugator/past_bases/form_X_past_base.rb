@@ -22,6 +22,17 @@ class FormXPastBase < Base
     defective_base
   end
 
+  def second_third_weak_base
+    @base = @base[0...-1]
+    if @pronoun == :he
+      @base + "ا"
+    elsif [:she, :they].include?(@pronoun)
+      @base
+    else
+      @base + "ي"
+    end
+  end
+
   def adjust_first_radical
     @root1 = "أ"
   end

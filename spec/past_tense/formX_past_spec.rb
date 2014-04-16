@@ -31,6 +31,17 @@ describe "Form X Past" do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "10", tense: "past", pronoun: :you_pl})
       expect(verb.conjugate).to eq("استوفيتم")
     end
+
+    it 'conjugates form X defective-hollow past, :you_pl' do
+      verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "10", tense: "past", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("استحييتم")
+    end
+
+    it 'conjugates form X defective-hollow past, :he' do
+      verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "10", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("استحيا")
+    end
+
   end
 
   context 'doubled past' do
