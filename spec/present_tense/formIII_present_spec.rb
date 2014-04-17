@@ -56,9 +56,14 @@ describe "Form III Present" do
   end
 
   context 'assimilated present' do
-    it 'conjugates formIII assimilated present' do
+    it 'conjugates formIII assimilated present, first radical waaw' do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ق", form: "3", tense: "present", pronoun: :I})
       expect(verb.conjugate).to eq("أوافق")
+    end
+
+    it 'conjugates formIII assimilated present, first radical yaa' do
+      verb = Verb.new({root1: "ي", root2: "س", root3: "ر", form: "3", tense: "present", pronoun: :he})
+      expect(verb.conjugate).to eq("يياسر")
     end
   end
 

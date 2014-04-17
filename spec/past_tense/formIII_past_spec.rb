@@ -48,10 +48,15 @@ describe "Form III Past" do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ق", form: "3", tense: "past", pronoun: :we})
       expect(verb.conjugate).to eq("وافقنا")
     end
+
+    it 'conjugates formIII assimilated past, first radical yaa' do
+      verb = Verb.new({root1: "ي", root2: "س", root3: "ر", form: "3", tense: "past", pronoun: :we})
+      expect(verb.conjugate).to eq("ياسرنا")
+    end
   end
 
   context "hollow past" do
-    it 'conjugates formIII hollow past' do
+    it 'conjugates formIII hollow past, first radical waaw' do
       verb = Verb.new({root1: "ح", root2: "و", root3: "ل", form: "3", tense: "past", pronoun: :we})
       expect(verb.conjugate).to eq("حاولنا")
     end
