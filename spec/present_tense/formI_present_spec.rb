@@ -43,6 +43,11 @@ describe "Form I Present" do
       verb = Verb.new({root1: "و", root2: "ص", root3: "ف", form: "1", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تصف")
     end
+
+    it 'conjugates form I assimilated present with root 1 yaa' do
+      verb = Verb.new({root1: "ي", root2: "ق", root3: "ظ", form: "1", tense: "present", pronoun: :we})
+      expect(verb.conjugate).to eq("نقظ")
+    end
   end
 
   context "hollow present" do
