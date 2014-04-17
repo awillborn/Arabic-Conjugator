@@ -12,8 +12,8 @@ class TypeFactory
 
   def load_types
     types = []
-    types << "first_third_weak" if first_third_weak?
-    types << "second_third_weak" if second_third_weak?
+    types << "assimilated defective" if assimilated_defective?
+    types << "hollow defective" if hollow_defective?
     types << "defective" if defective?
     types << "hollow" if hollow?
     types << "doubled" if doubled?
@@ -24,11 +24,11 @@ class TypeFactory
     types
   end
 
-  def first_third_weak?
+  def assimilated_defective?
     (@root1 == "و" || @root1 == "ي") && (@root3 == "و" || @root3 == "ي")
   end
 
-  def second_third_weak?
+  def hollow_defective?
     (@root2 == "و" || @root2 == "ي") && (@root3 == "و" || @root3 == "ي")
   end
 

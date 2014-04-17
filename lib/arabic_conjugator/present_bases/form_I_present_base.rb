@@ -25,7 +25,7 @@ class FormIPresentBase < Base
     end
   end
 
-  def first_third_weak_base
+  def assimilated_defective_base
     if [:you_pl, :they, :you_f].include?(@pronoun)
       @root2
     else

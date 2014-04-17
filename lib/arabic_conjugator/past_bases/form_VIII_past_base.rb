@@ -19,7 +19,7 @@ class FormVIIIPastBase < Base
     end
   end
 
-  def first_third_weak_base
+  def assimilated_defective_base
     @base = "اتّ" + @root2
     if @pronoun == :he
       @base + "ى"

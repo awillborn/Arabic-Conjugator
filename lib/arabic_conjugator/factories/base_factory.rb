@@ -50,10 +50,10 @@ class BaseFactory
   def load_base
     form = FORM_MAPPING[@form_name.concat(@tense)].new(@verb)
     case @types
-    when "first_third_weak"
-      form.first_third_weak_base
-    when "second_third_weak"
-      form.second_third_weak_base
+    when "assimilated defective"
+      form.assimilated_defective_base
+    when "hollow defective"
+      form.hollow_defective_base
     when "assimilated"
       form.assimilated_base
     when "defective"

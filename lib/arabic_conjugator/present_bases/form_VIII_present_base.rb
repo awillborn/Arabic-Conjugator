@@ -16,7 +16,7 @@ class FormVIIIPresentBase < Base
     @root1 + "ت" + @root2 + @root3
   end
 
-  def first_third_weak_base
+  def assimilated_defective_base
     @base = "تّ" + @root2 + @root3
     if [:you_f, :you_pl, :they].include?(@pronoun)
       @base[0...-1]

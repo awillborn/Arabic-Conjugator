@@ -13,7 +13,7 @@ class FormIIPastBase < Base
     @base
   end
 
-  def second_third_weak_base
+  def hollow_defective_base
     @base = @base[0...-1]
     roots = @root1 + @root2 + @root3
     if @pronoun == :he
