@@ -24,6 +24,10 @@ class FormVPastBase < Base
     @base
   end
 
+  def adjust_second_radical
+    @root2 = "أ"
+  end
+
   def adjust_third_radical
     @root3 = "أ"
   end
