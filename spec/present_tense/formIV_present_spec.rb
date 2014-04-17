@@ -31,7 +31,6 @@ describe "Form IV Present" do
       verb = Verb.new({root1: "ق", root2: "و", root3: "م", form: "4", tense: "present", pronoun: :I})
       expect(verb.conjugate).to eq("أقيم")
     end
-
   end
 
   context 'assimilated present' do
