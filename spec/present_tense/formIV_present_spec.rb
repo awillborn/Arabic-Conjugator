@@ -31,6 +31,21 @@ describe "Form IV Present" do
       verb = Verb.new({root1: "ق", root2: "و", root3: "م", form: "4", tense: "present", pronoun: :I})
       expect(verb.conjugate).to eq("أقيم")
     end
+
+    it 'conjugates form IV hollow present, final radical hamza, :I' do
+      verb = Verb.new({root1: "ض", root2: "و", root3: "ء", form: "4", tense: "present", pronoun: :I})
+      expect(verb.conjugate).to eq("أضيء")
+    end
+
+    it 'conjugates form IV hollow present, final radical hamza, :you_f' do
+      verb = Verb.new({root1: "ض", root2: "و", root3: "ء", form: "4", tense: "present", pronoun: :you_f})
+      expect(verb.conjugate).to eq("تضيئين")
+    end
+
+    it 'conjugates form IV hollow present, final radical hamza, :you_pl' do
+      verb = Verb.new({root1: "ض", root2: "و", root3: "ء", form: "4", tense: "present", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("تضيؤون")
+    end
   end
 
   context 'assimilated present' do

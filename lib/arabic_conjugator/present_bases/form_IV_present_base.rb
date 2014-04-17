@@ -16,7 +16,13 @@ class FormIVPresentBase < Base
   end
 
   def hollow_base
-    @root1 + "ي" + @root3
+    if @root3 == "ئ" && [:I, :you_m, :he, :she, :we].include?(@pronoun)
+      @root1 + "يء"
+    elsif @root3 == "ئ" && [:you_pl, :they].include?(@pronoun)
+      @root1 + "يؤ"
+    else
+      @root1 + "ي" + @root3
+    end
   end
 
   def doubled_base
