@@ -34,7 +34,13 @@ class FormIVPastBase < Base
   end
 
   def adjust_third_radical
-    @root3 = "أ"
+    if [:he, :she].include?(@pronoun) && ["و", "ي"].include?(@root2)
+      @root3 = "ء"
+    elsif @pronoun == :they
+      @root3 = "ؤ"
+    else
+      @root3 = "أ"
+    end
   end
 
 end

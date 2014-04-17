@@ -58,6 +58,21 @@ describe "Form IV Past" do
       verb = Verb.new({root1: "ق", root2: "و", root3: "م", form: "4", tense: "past", pronoun: :you_m})
       expect(verb.conjugate).to eq("أقمت")
     end
+
+    it 'conjugates form IV hollow past, final radical hamza, :I' do
+      verb = Verb.new({root1: "ض", root2: "و", root3: "ء", form: "4", tense: "past", pronoun: :I})
+      expect(verb.conjugate).to eq("أضأت")
+    end
+
+    it 'conjugates form IV hollow past, final radical hamza, :she' do
+      verb = Verb.new({root1: "ض", root2: "و", root3: "ء", form: "4", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("أضاءت")
+    end
+
+    it 'conjugates form IV hollow past, final radical hamza, :they' do
+      verb = Verb.new({root1: "ض", root2: "و", root3: "ء", form: "4", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("أضاؤوا")
+    end
   end
 
   context "assimilated past" do
