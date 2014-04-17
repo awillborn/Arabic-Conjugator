@@ -22,7 +22,7 @@ describe "Form VI Past" do
 
     it 'conjugates form VI past with third radical hamza' do
       verb = Verb.new({root1: "ك", root2: "ف", root3: "ء", form: "6", tense: "past", pronoun: :they})
-      expect(verb.conjugate).to eq("تكافأوا")
+      expect(verb.conjugate).to eq("تكافؤوا")
     end
   end
 

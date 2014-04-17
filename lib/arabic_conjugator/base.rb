@@ -17,7 +17,11 @@ class Base
   end
 
   def regular_base
-    @base
+    if @root3 == "أ" && @pronoun == :they
+      @base[0...-1] + "ؤ"
+    else
+      @base
+    end
   end
 
   def defective_base
@@ -36,7 +40,11 @@ class Base
   end
 
   def hollow_base
-    @base
+    if @root3 == "أ" && @pronoun == :they
+      @base[0...-1] + "ؤ"
+    else
+      @base
+    end
   end
 
   def doubled_base
