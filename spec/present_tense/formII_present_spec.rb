@@ -39,14 +39,19 @@ describe "Form II Present" do
       expect(verb.conjugate).to eq("توفّي")
     end
 
-    it 'conjugates form II hollow-defective present' do
+    it 'conjugates form II hollow-defective present, version 1' do
       verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "2", tense: "present", pronoun: :you_f})
       expect(verb.conjugate).to eq("تحيّين")
     end
 
-    it 'conjugates form II hollow-defective present' do
+    it 'conjugates form II hollow-defective present, version 2' do
       verb = Verb.new({root1: "ر", root2: "ب", root3: "ي", form: "2", tense: "present", pronoun: :we})
       expect(verb.conjugate).to eq("نربّي")
+    end
+
+    it 'conjugates form II hamzated-defective present' do
+      verb = Verb.new({root1: "ء", root2: "د", root3: "ي", form: "2", tense: "present", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("تؤدّون")
     end
   end
 

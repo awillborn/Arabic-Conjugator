@@ -41,6 +41,11 @@ describe "Form II Past" do
       verb = Verb.new({root1: "ر", root2: "ب", root3: "ي", form: "2", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("ربّى")
     end
+
+    it 'conjugates form II hamzated-defective past' do
+      verb = Verb.new({root1: "ء", root2: "د", root3: "ي", form: "2", tense: "past", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("أدّيتم")
+    end
   end
 
   context 'doubled past' do
