@@ -10,11 +10,10 @@ class FormIIIPastBase < Base
   end
 
   def defective_base
-    @base = @base[0...-1]
     if @root3 == "و" && @pronoun == :he
-      @base + "ا"
+      @base[0...-1] + "ا"
     elsif @root3 == "ي" && @pronoun == :he
-      @base + "ى"
+      @base[0...-1] + "ى"
     else
       @base
     end

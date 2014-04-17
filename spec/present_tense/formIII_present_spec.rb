@@ -41,6 +41,11 @@ describe "Form III Present" do
       verb = Verb.new({root1: "س", root2: "و", root3: "ي", form: "3", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يساوون")
     end
+
+    it 'conjugates formIII hamzated-defective present' do
+      verb = Verb.new({root1: "ء", root2: "ت", root3: "ي", form: "3", tense: "present", pronoun: :you_f})
+      expect(verb.conjugate).to eq("تؤاتين")
+    end
   end
 
   context 'hollow present' do
