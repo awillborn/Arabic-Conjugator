@@ -15,6 +15,11 @@ describe "Form X Present" do
       expect(verb.conjugate).to eq("تستأجرون")
     end
 
+    it 'conjugates form X regular present with hamza as second radical' do
+      verb = Verb.new({root1: "ر", root2: "ء", root3: "ف", form: "10", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تسترأف")
+    end
+
     it 'conjugates form X regular present with hamza as third radical' do
       verb = Verb.new({root1: "ه", root2: "ز", root3: "ء", form: "10", tense: "present", pronoun: :you_m})
       expect(verb.conjugate).to eq("تستهزئ")

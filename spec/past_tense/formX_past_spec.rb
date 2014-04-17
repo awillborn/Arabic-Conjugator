@@ -15,6 +15,11 @@ describe "Form X Past" do
       expect(verb.conjugate).to eq("استأجرتم")
     end
 
+    it 'conjugates form X regular past with hamza as second radical' do
+      verb = Verb.new({root1: "ر", root2: "ء", root3: "ف", form: "10", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("استرأفت")
+    end
+
     it 'conjugates form X regular past with hamza as third radical' do
       verb = Verb.new({root1: "ه", root2: "ز", root3: "ء", form: "10", tense: "past", pronoun: :you_m})
       expect(verb.conjugate).to eq("استهزأت")
