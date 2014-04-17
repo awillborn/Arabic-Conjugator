@@ -78,9 +78,14 @@ describe "Form II Present" do
   end
 
   context 'assimilated present' do
-    it 'conjugates form II assimilated present tense' do
+    it 'conjugates form II assimilated present tense, first radical yaa' do
       verb = Verb.new({root1: "ي", root2: "س", root3: "ر", form: "2", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تيسّر")
+    end
+
+    it 'conjugates form II assimilated present tense, first radical waaw' do
+      verb = Verb.new({root1: "و", root2: "ص", root3: "ل", form: "2", tense: "present", pronoun: :you_f})
+      expect(verb.conjugate).to eq("توصّلين")
     end
   end
 

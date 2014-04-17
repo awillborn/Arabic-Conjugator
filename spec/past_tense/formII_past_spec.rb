@@ -70,6 +70,12 @@ describe "Form II Past" do
       verb = Verb.new({root1: "ي", root2: "س", root3: "ر", form: "2", tense: "past", pronoun: :you_pl})
       expect(verb.conjugate).to eq("يسّرتم")
     end
+
+
+    it 'conjugates form II assimilated past tense, first radical waaw' do
+      verb = Verb.new({root1: "و", root2: "ص", root3: "ل", form: "2", tense: "past", pronoun: :you_f})
+      expect(verb.conjugate).to eq("وصّلت")
+    end
   end
 
   context 'hollow past' do
