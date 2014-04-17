@@ -33,10 +33,6 @@ class FormIPresentBase < Base
     end
   end
 
-  def adjust_first_radical
-    @root1 = "أ"
-  end
-
   def adjust_second_radical
     base = @root1 + @root2 + @root3
     @root2 = FORM_I_HAMZATED[base]

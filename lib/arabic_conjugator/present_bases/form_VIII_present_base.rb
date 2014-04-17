@@ -53,10 +53,6 @@ class FormVIIIPresentBase < Base
     end
   end
 
-  def adjust_first_radical
-    @root1 = "أ"
-  end
-
   def adjust_second_radical
     @root2 = "ئ"
   end
