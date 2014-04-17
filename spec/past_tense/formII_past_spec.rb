@@ -20,9 +20,14 @@ describe "Form II Past" do
       expect(verb.conjugate).to eq("رأّسوا")
     end
 
-    it 'conjugates form II regular past with third radical hamza' do
+    it 'conjugates form II regular past with third radical hamza, :we' do
       verb = Verb.new({root1: "ه", root2: "ن", root3: "ء", form: "2", tense: "past", pronoun: :we})
       expect(verb.conjugate).to eq("هنّأنا")
+    end
+
+    it 'conjugates form II regular past with third radical hamza, :they' do
+      verb = Verb.new({root1: "ه", root2: "ن", root3: "ء", form: "2", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("هنّؤوا")
     end
   end
 
