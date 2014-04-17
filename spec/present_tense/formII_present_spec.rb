@@ -66,6 +66,11 @@ describe "Form II Present" do
       expect(verb.conjugate).to eq("يزوّرون")
     end
 
+    it 'conjugates form II hollow present with yaa as second radical' do
+      verb = Verb.new({root1: "م", root2: "ي", root3: "ل", form: "2", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يميّلون")
+    end
+
     it 'conjugates form II hollow present with third radical hamza' do
       verb = Verb.new({root1: "ب", root2: "و", root3: "ء", form: "2", tense: "present", pronoun: :you_m})
       expect(verb.conjugate).to eq("تبوّئ")

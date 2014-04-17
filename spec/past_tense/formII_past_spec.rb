@@ -84,6 +84,11 @@ describe "Form II Past" do
       expect(verb.conjugate).to eq("صوّتت")
     end
 
+    it 'conjugates form II hollow past with yaa as second radical' do
+      verb = Verb.new({root1: "م", root2: "ي", root3: "ل", form: "2", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("ميّلوا")
+    end
+
     it 'conjugates form II hollow past with third radical hamza' do
       verb = Verb.new({root1: "ب", root2: "و", root3: "ء", form: "2", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("بوّؤوا")
