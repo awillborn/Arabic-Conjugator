@@ -27,7 +27,7 @@ describe "Form III Present" do
   end
 
   context 'defective present' do
-    it 'conjugates formIII defective present with final root yaa, :you_pl' do
+    it 'conjugates formIII defective present with final root waaw, :you_pl' do
       verb = Verb.new({root1: "ن", root2: "د", root3: "ي", form: "3", tense: "present", pronoun: :you_pl})
       expect(verb.conjugate).to eq("تنادون")
     end
