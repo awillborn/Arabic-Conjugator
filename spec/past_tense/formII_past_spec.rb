@@ -42,12 +42,12 @@ describe "Form II Past" do
       expect(verb.conjugate).to eq("وفّت")
     end
 
-    it 'conjugates form II hollow-defective' do
+    it 'conjugates form II hollow-defective, version 2' do
       verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "2", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("حيّا")
     end
 
-    it 'conjugates form II hollow-defective' do
+    it 'conjugates form II hollow-defective, version 1' do
       verb = Verb.new({root1: "ر", root2: "ب", root3: "ي", form: "2", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("ربّى")
     end
@@ -89,9 +89,14 @@ describe "Form II Past" do
       expect(verb.conjugate).to eq("ميّلوا")
     end
 
-    it 'conjugates form II hollow past with third radical hamza' do
+    it 'conjugates form II hollow past with third radical hamza, second radical waaw' do
       verb = Verb.new({root1: "ب", root2: "و", root3: "ء", form: "2", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("بوّؤوا")
+    end
+
+    it 'conjugates form II hollow past with third radical hamza, second radical yaa' do
+      verb = Verb.new({root1: "ه", root2: "ي", root3: "ء", form: "2", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("هيّؤوا")
     end
 
     it 'conjugates form II hollow past with first radical hamza' do
