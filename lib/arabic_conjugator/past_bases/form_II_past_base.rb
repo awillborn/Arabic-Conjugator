@@ -13,6 +13,14 @@ class FormIIPastBase < Base
     @base
   end
 
+  def hollow_base
+    if @root3 == "أ" && @pronoun == :they
+      @root1 + @root2 + "ؤ"
+    else
+      @base
+    end
+  end
+
   def hollow_defective_base
     @base = @base[0...-1]
     roots = @root1 + @root2 + @root3
