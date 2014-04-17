@@ -31,6 +31,16 @@ describe "Form II Past" do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "2", tense: "past", pronoun: :she})
       expect(verb.conjugate).to eq("وفّت")
     end
+
+    it 'conjugates form II hollow-defective' do
+      verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "2", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("حيّا")
+    end
+
+    it 'conjugates form II hollow-defective' do
+      verb = Verb.new({root1: "ر", root2: "ب", root3: "ي", form: "2", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("ربّى")
+    end
   end
 
   context 'doubled past' do
