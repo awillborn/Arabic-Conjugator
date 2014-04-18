@@ -82,6 +82,11 @@ describe "Form IV Present" do
       verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "4", tense: "present", pronoun: :you_f})
       expect(verb.conjugate).to eq("تحيين")
     end
+
+    it 'conjugates formIV defective-hamzated present' do
+      verb = Verb.new({root1: "ء", root2: "ت", root3: "ي", form: "4", tense: "present", pronoun: :you_m})
+      expect(verb.conjugate).to eq("تؤتي")
+    end
   end
 
 end

@@ -41,6 +41,11 @@ describe "Form IV Past" do
       verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "4", tense: "past", pronoun: :you_m})
       expect(verb.conjugate).to eq("أحييت")
     end
+
+    it 'conjugates formIV defective-hamzated present' do
+      verb = Verb.new({root1: "ء", root2: "ت", root3: "ي", form: "4", tense: "past", pronoun: :you_m})
+      expect(verb.conjugate).to eq("آتيت")
+    end
   end
 
   context "hollow past" do
