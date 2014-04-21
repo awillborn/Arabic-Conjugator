@@ -11,7 +11,7 @@ class FormIIIPresentBase < Base
     if [:you_pl, :they, :you_f].include?(@pronoun)
       @base[0...-1]
     else
-      @base
+      @base[0...-1] + "ي"
     end
   end
 

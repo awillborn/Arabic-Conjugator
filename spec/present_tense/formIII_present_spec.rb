@@ -32,9 +32,14 @@ describe "Form III Present" do
       expect(verb.conjugate).to eq("تنادون")
     end
 
-    it 'conjugates formIII defective present with final root yaa, :she' do
-      verb = Verb.new({root1: "ن", root2: "د", root3: "ي", form: "3", tense: "present", pronoun: :she})
+    it 'conjugates formIII defective present with final root waaw, :she' do
+      verb = Verb.new({root1: "ن", root2: "د", root3: "و", form: "3", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تنادي")
+    end
+
+    it 'conjugates formIII defective present with final root yaa, :she' do
+      verb = Verb.new({root1: "ح", root2: "م", root3: "ي", form: "3", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يحامون")
     end
 
     it 'conjugates formIII hollow-defective present' do
