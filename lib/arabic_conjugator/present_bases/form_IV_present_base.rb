@@ -15,6 +15,10 @@ class FormIVPresentBase < Base
     end
   end
 
+  def assimilated_base
+    "و" + @base[1..-1]
+  end
+
   def hollow_base
     if @root3 == "ئ" && [:I, :you_m, :he, :she, :we].include?(@pronoun)
       @root1 + "يء"

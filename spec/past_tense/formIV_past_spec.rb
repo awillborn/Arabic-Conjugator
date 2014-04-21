@@ -81,9 +81,14 @@ describe "Form IV Past" do
   end
 
   context "assimilated past" do
-    it 'conjugates formIV assimilated past' do
+    it 'conjugates formIV assimilated past, first radical waaw' do
       verb = Verb.new({root1: "و", root2: "ق", root3: "ف", form: "4", tense: "past", pronoun: :you_pl})
       expect(verb.conjugate).to eq("أوقفتم")
+    end
+
+    it 'conjugates form IV assimilated past, first radical yaa' do
+      verb = Verb.new({root1: "ي", root2: "ق", root3: "ظ", form: "4", tense: "past", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("أيقظتم")
     end
   end
 
