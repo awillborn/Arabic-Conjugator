@@ -64,6 +64,11 @@ describe "Form IV Past" do
       expect(verb.conjugate).to eq("أقمت")
     end
 
+    it 'conjugates form IV hollow past, medial yaa' do
+      verb = Verb.new({root1: "ذ", root2: "ي", root3: "ع", form: "4", tense: "past", pronoun: :you_m})
+      expect(verb.conjugate).to eq("أذعت")
+    end
+
     it 'conjugates form IV hollow past, final radical hamza, :I' do
       verb = Verb.new({root1: "ض", root2: "و", root3: "ء", form: "4", tense: "past", pronoun: :I})
       expect(verb.conjugate).to eq("أضأت")

@@ -27,9 +27,14 @@ describe "Form IV Present" do
   end
 
   context 'hollow present' do
-    it 'conjugates form IV hollow present' do
+    it 'conjugates form IV hollow present, medial waaw' do
       verb = Verb.new({root1: "ق", root2: "و", root3: "م", form: "4", tense: "present", pronoun: :I})
       expect(verb.conjugate).to eq("أقيم")
+    end
+
+    it 'conjugates form IV hollow present, medial yaa' do
+      verb = Verb.new({root1: "ذ", root2: "ي", root3: "ع", form: "4", tense: "present", pronoun: :you_m})
+      expect(verb.conjugate).to eq("تذيع")
     end
 
     it 'conjugates form IV hollow present, final radical hamza, :I' do
