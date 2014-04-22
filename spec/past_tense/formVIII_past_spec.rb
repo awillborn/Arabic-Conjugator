@@ -79,6 +79,11 @@ describe "Form VIII Past" do
       verb = Verb.new({root1: "ت", root2: "ب", root3: "ع", form: "8", tense: "past", pronoun: :we})
       expect(verb.conjugate).to eq("اتّبعنا")
     end
+
+    it 'conjugates form VIII assimilated taa past with first radical daal' do
+      verb = Verb.new({root1: "د", root2: "ح", root3: "ر", form: "8", tense: "past", pronoun: :I})
+      expect(verb.conjugate).to eq("ادّحرت")
+    end
   end
 
   context "morphed taa past" do
