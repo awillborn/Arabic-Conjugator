@@ -53,9 +53,14 @@ describe "Form V Past" do
   end
 
   context 'assimilated past' do
-    it 'conjugates form V assimilated past' do
+    it 'conjugates form V assimilated past, first radical waaw' do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ر", form: "5", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("توفّروا")
+    end
+
+    it 'conjugates form V assimilated past, first radical yaa' do
+      verb = Verb.new({root1: "ي", root2: "ق", root3: "ظ", form: "5", tense: "past", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("تيقّظتم")
     end
   end
 
