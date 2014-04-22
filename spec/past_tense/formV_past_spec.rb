@@ -46,9 +46,14 @@ describe "Form V Past" do
   end
 
   context 'hollow past' do
-    it 'conjugates form V hollow past' do
+    it 'conjugates form V hollow past, middle radical yaa' do
       verb = Verb.new({root1: "ع", root2: "ي", root3: "ن", form: "5", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("تعيّنوا")
+    end
+
+    it 'conjugates form V hollow past, middle radical waaw' do
+      verb = Verb.new({root1: "ص", root2: "و", root3: "ر", form: "5", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("تصوّرت")
     end
   end
 

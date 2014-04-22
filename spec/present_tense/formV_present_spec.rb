@@ -48,6 +48,11 @@ describe "Form V Present" do
       verb = Verb.new({root1: "ع", root2: "ي", root3: "ن", form: "5", tense: "present", pronoun: :you_pl})
       expect(verb.conjugate).to eq("تتعيّنون")
     end
+
+    it 'conjugates form V hollow present, middle radical waaw' do
+      verb = Verb.new({root1: "ص", root2: "و", root3: "ر", form: "5", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تتصوّر")
+    end
   end
 
   context 'doubled present' do
