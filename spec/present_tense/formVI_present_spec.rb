@@ -34,14 +34,19 @@ describe "Form VI Present" do
   end
 
   context "defective present" do
-    it 'conjugates form VI defective present, :he' do
+    it 'conjugates form VI defective present, third radical yaa, :he' do
       verb = Verb.new({root1: "ق", root2: "ض", root3: "ي", form: "6", tense: "present", pronoun: :he})
       expect(verb.conjugate).to eq("يتقاضى")
     end
 
-    it 'conjugates form VI defective present, :they' do
+    it 'conjugates form VI defective present, third radical yaa, :they' do
       verb = Verb.new({root1: "ق", root2: "ض", root3: "ي", form: "6", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يتقاضون")
+    end
+
+    it 'conjugates form VI defective present, third radical waaw' do
+      verb = Verb.new({root1: "ع", root2: "ف", root3: "و", form: "6", tense: "present", pronoun: :you_m})
+      expect(verb.conjugate).to eq("تتعافى")
     end
 
     it 'conjugates form VI defective-assimilated present' do

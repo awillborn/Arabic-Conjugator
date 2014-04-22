@@ -27,9 +27,14 @@ describe "Form VI Past" do
   end
 
   context "defective past" do
-    it 'conjugates form VI defective past' do
+    it 'conjugates form VI defective past, third radical yaa' do
       verb = Verb.new({root1: "ق", root2: "ض", root3: "ي", form: "6", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("تقاضى")
+    end
+
+    it 'conjugates form VI defective past, third radical waaw' do
+      verb = Verb.new({root1: "ع", root2: "ف", root3: "و", form: "6", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("تعافوا")
     end
 
     it 'conjugates form VI defective-assimilated past' do
