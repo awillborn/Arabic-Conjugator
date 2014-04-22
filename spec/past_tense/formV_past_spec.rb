@@ -32,6 +32,11 @@ describe "Form V Past" do
       expect(verb.conjugate).to eq("تحدّيت")
     end
 
+    it 'conjugates form V defective past, final radical waaw, :you_f' do
+      verb = Verb.new({root1: "غ", root2: "د", root3: "و", form: "5", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("تغدّوا")
+    end
+
     it 'conjugates form V doubly weak defective present, first radical waaw' do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "5", tense: "past", pronoun: :you_m})
       expect(verb.conjugate).to eq("توفّيت")

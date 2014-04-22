@@ -63,14 +63,19 @@ describe "Form V Present" do
   end
 
   context "defective present" do
-    it 'conjugates form V defective present, :you_m' do
+    it 'conjugates form V defective present, final radical yaa, :you_m' do
       verb = Verb.new({root1: "ح", root2: "د", root3: "ي", form: "5", tense: "present", pronoun: :you_m})
       expect(verb.conjugate).to eq("تتحدّى")
     end
 
-    it 'conjugates form V defective present, :you_f' do
+    it 'conjugates form V defective present, final radical yaa, :you_f' do
       verb = Verb.new({root1: "ح", root2: "د", root3: "ي", form: "5", tense: "present", pronoun: :you_f})
       expect(verb.conjugate).to eq("تتحدّين")
+    end
+
+    it 'conjugates form V defective present, final radical waaw, :you_f' do
+      verb = Verb.new({root1: "غ", root2: "د", root3: "و", form: "5", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يتغدّون")
     end
 
     it 'conjugates form V doubly weak defective present, first radical waaw' do

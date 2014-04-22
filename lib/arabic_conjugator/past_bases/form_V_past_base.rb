@@ -10,11 +10,11 @@ class FormVPastBase < Base
   end
 
   def defective_base
-    @new_base = @base[0...-1]
-    if @root3 == "و" && @pronoun == :he
-      @new_base + "ا"
-    elsif @root3 == "ي" && @pronoun == :he
-      @new_base + "ى"
+    if @pronoun == :he
+      @base[0...-1] + "ا" if @root3 == "و"
+      @base[0...-1] + "ى" if @root3 == "ي"
+    elsif [:she, :they].include?(@pronoun)
+      @base[0...-1]
     else
       @base
     end
