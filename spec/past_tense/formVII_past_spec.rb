@@ -29,14 +29,19 @@ describe "Form VII Past" do
   end
 
   context "hollow past" do
-    it 'conjugates formVII past, :she' do
+    it 'conjugates formVII past, middle radical waaw, :she' do
       verb = Verb.new({root1: "ق", root2: "و", root3: "د", form: "7", tense: "past", pronoun: :she})
       expect(verb.conjugate).to eq("انقادت")
     end
 
-    it 'conjugates formVII past, :you_pl' do
+    it 'conjugates formVII past, middle radical waaw, :you_pl' do
       verb = Verb.new({root1: "ق", root2: "و", root3: "د", form: "7", tense: "past", pronoun: :you_pl})
       expect(verb.conjugate).to eq("انقدتم")
+    end
+
+    it 'conjugates formVII past, middle radical yaa' do
+      verb = Verb.new({root1: "ب", root2: "ي", root3: "ع", form: "7", tense: "past", pronoun: :you_f})
+      expect(verb.conjugate).to eq("انبعت")
     end
   end
 

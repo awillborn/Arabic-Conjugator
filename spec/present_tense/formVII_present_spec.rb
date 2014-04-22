@@ -17,9 +17,14 @@ describe "Form VII Present" do
   end
 
   context "hollow present" do
-    it 'conjugates formVII present, :she' do
+    it 'conjugates formVII present, middle radical waaw, :she' do
       verb = Verb.new({root1: "ق", root2: "و", root3: "د", form: "7", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تنقاد")
+    end
+
+    it 'conjugates formVII present, middle radical yaa' do
+      verb = Verb.new({root1: "ب", root2: "ي", root3: "ع", form: "7", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تنباع")
     end
   end
 
