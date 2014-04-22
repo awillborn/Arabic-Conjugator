@@ -73,14 +73,19 @@ describe "Form IV Present" do
   end
 
   context 'defective present' do
-    it 'conjugates form IV defective present, :you_pl' do
+    it 'conjugates form IV defective present, final root yaa, :you_pl' do
       verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "present", pronoun: :you_pl})
       expect(verb.conjugate).to eq("تجرون")
     end
 
-    it 'conjugates form IV defective present, :I' do
+    it 'conjugates form IV defective present, final root yaa, :I' do
       verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "present", pronoun: :I})
       expect(verb.conjugate).to eq("أجري")
+    end
+
+    it 'conjugates form IV defective present, final root waaw' do
+      verb = Verb.new({root1: "ع", root2: "ط", root3: "و", form: "4", tense: "present", pronoun: :they})
+      expect(verb.conjugate).to eq("يعطون")
     end
 
     it 'conjugates formIV doubly weak present - defective and assimilated' do

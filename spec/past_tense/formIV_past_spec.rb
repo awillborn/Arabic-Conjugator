@@ -27,14 +27,19 @@ describe "Form IV Past" do
   end
 
   context "defective past" do
-    it 'conjugates form IV defective past' do
+    it 'conjugates form IV defective past, final root yaa, you_pl' do
       verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "past", pronoun: :you_pl})
       expect(verb.conjugate).to eq("أجريتم")
     end
 
-    it 'conjugates form IV defective past' do
+    it 'conjugates form IV defective past, final root yaa, he' do
       verb = Verb.new({root1: "ج", root2: "ر", root3: "ي", form: "4", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("أجرى")
+    end
+
+    it 'conjugates form IV defective past, final root waaw' do
+      verb = Verb.new({root1: "ع", root2: "ط", root3: "و", form: "4", tense: "past", pronoun: :they})
+      expect(verb.conjugate).to eq("أعطوا")
     end
 
     it 'conjugates form IV doubly weak past - defective and assimilated' do
