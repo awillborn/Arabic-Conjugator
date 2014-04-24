@@ -1,5 +1,6 @@
 # encoding: utf-8
 require_relative '../form_I_hamzated'
+require_relative '../form_I_hollow'
 require_relative '../base'
 
 class FormIPresentBase < Base
@@ -11,6 +12,11 @@ class FormIPresentBase < Base
 
   def assimilated_base
     @root2 + @root3
+  end
+
+  def hollow_base
+    @base = @root1 + FORM_I_HOLLOW[@base] + @root3 if FORM_I_HOLLOW[@base]
+    super
   end
 
   def doubled_base

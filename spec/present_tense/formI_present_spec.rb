@@ -51,9 +51,19 @@ describe "Form I Present" do
   end
 
   context "hollow present" do
-    it 'conjugates form I hollow present' do
+    it 'conjugates form I hollow present, middle root waaw' do
       verb = Verb.new({root1: "ق", root2: "و", root3: "ل", form: "1", tense: "present", pronoun: :he})
       expect(verb.conjugate).to eq("يقول")
+    end
+
+    it 'conjugates form I hollow present, middle root yaa' do
+      verb = Verb.new({root1: "ب", root2: "ي", root3: "ع", form: "1", tense: "present", pronoun: :you_m})
+      expect(verb.conjugate).to eq("تبيع")
+    end
+
+    it 'conjugates form I hollow present, irregular' do
+      verb = Verb.new({root1: "ن", root2: "و", root3: "م", form: "1", tense: "present", pronoun: :you_m})
+      expect(verb.conjugate).to eq("تنام")
     end
 
     it 'conjugates form I hollow present with third radical hamza, :he' do
