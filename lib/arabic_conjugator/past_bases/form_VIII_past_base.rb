@@ -28,6 +28,11 @@ class FormVIIIPastBase < Base
     end
   end
 
+  def doubled_base
+    @base = morphed_taa_base if ["ز", "ذ", "ص", "ض"].include?(@root1)
+    super
+  end
+
   def assimilated_defective_base
     @base = "اتّ" + @root2
     if @pronoun == :he

@@ -38,6 +38,7 @@ class FormVIIIPresentBase < Base
   end
 
   def doubled_base
+    @base = morphed_taa_base if ["ز", "ذ", "ص", "ض"].include?(@root1)
     @base[0...-1] + "ّ"
   end
 

@@ -65,6 +65,11 @@ describe "Form VIII Past" do
       verb = Verb.new({root1: "م", root2: "د", root3: "د", form: "8", tense: "past", pronoun: :I})
       expect(verb.conjugate).to eq("امتددت")
     end
+
+    it 'conjugates form VIII doubled present, morphed taa' do
+      verb = Verb.new({root1: "ض", root2: "ر", root3: "ر", form: "8", tense: "past", pronoun: :she})
+      expect(verb.conjugate).to eq("اضطرّت")
+    end
   end
 
   context "assimilated past" do
