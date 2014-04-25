@@ -33,6 +33,13 @@ describe "Form VIII Present" do
     end
   end
 
+  context "hollow present" do
+    it 'conjugates form VIII hollow present, :I' do
+      verb = Verb.new({root1: "خ", root2: "و", root3: "ر", form: "8", tense: "present", pronoun: :I})
+      expect(verb.conjugate).to eq("أختار")
+    end
+  end
+
   context "assimilated taa present" do
     it 'conjugates form VIII assimilated taa present with root1 Thal' do
       verb = Verb.new({root1: "ظ", root2: "ل", root3: "م", form: "8", tense: "present", pronoun: :he})
