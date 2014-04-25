@@ -24,8 +24,8 @@ class FormIPastBase < Base
   def defective_base
     @base = @base[0...-1]
     if @pronoun == :he
-      @base + "ا" if @root3 == "و"
-      @base + "ى" if @root3 == "ي"
+      return @base + "ا" if (@root3 == "و")
+      @base + "ى"
     else
       @base
     end

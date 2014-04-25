@@ -1,12 +1,21 @@
 # encoding: utf-8
 
 require_relative '../base'
+require_relative '../form_VIII_hamzated'
 
 class FormVIIIPastBase < Base
 
   def initialize(verb)
     super
     @base =  "ا" + @root1 + "ت" + @root2 + @root3
+  end
+
+  def regular_base
+    if @root1 == "ت"
+      "اتّ" + @root2 + @root3
+    else
+      @base
+    end
   end
 
   def hollow_base
@@ -47,7 +56,7 @@ class FormVIIIPastBase < Base
   end
 
   def adjust_first_radical
-    @root1 = "ئ"
+    @root1 = (FORM_VIII_HAMZATED[@root1 + @root2 + @root3] ||= "ئ")
   end
 
   def adjust_second_radical

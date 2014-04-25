@@ -10,9 +10,14 @@ describe "Form VIII Past" do
       expect(verb.conjugate).to eq("اكتشفت")
     end
 
-    it 'conjugates form VIII past with first radical hamza' do
+    it 'conjugates form VIII past with first radical hamza, first type' do
       verb = Verb.new({root1: "ء", root2: "ل", root3: "ف", form: "8", tense: "past", pronoun: :I})
       expect(verb.conjugate).to eq("ائتلفت")
+    end
+
+    it 'conjugates form VIII past with first radical hamza, second type' do
+      verb = Verb.new({root1: "ء", root2: "خ", root3: "ذ", form: "8", tense: "past", pronoun: :I})
+      expect(verb.conjugate).to eq("اتّخذت")
     end
 
     it 'conjugates form VIII past with second radical hamza' do
