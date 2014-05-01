@@ -2,12 +2,15 @@
 
 require_relative '../base'
 require_relative '../form_VIII_hamzated'
+require_relative '../form_VIII_hollow'
+
 
 class FormVIIIPastBase < Base
 
   def initialize(verb)
     super
     @base =  "ا" + @root1 + "ت" + @root2 + @root3
+    @base = morphed_taa_base if ["ز", "ذ", "ص", "ض"].include?(@root1)
   end
 
   def regular_base
@@ -19,12 +22,13 @@ class FormVIIIPastBase < Base
   end
 
   def hollow_base
-    @root2 = "ا"
-    @base = "ا" + @root1 + "ت" + @root2 + @root3
-    if [:he, :she, :they].include?(@pronoun)
-      @base
-    else
+    @root2 = (FORM_VIII_HOLLOW[@root1+@root2+@root3] ||= "ا")
+    @base =  "ا" + @root1 + "ت" + @root2 + @root3
+    @base = morphed_taa_base if ["ز", "ذ", "ص", "ض"].include?(@root1)
+    if @root2 == "ا" && ![:he, :she, :they].include?(@pronoun)
       "ا" + @root1 + "ت" + @root3
+    else
+      @base
     end
   end
 

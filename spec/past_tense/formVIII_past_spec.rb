@@ -58,6 +58,11 @@ describe "Form VIII Past" do
       verb = Verb.new({root1: "خ", root2: "و", root3: "ر", form: "8", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("اختار")
     end
+
+    it 'conjugates form VIII hollow past, irregular' do
+      verb = Verb.new({root1: "ز", root2: "و", root3: "ج", form: "8", tense: "past", pronoun: :I})
+      expect(verb.conjugate).to eq("ازدوجت")
+    end
   end
 
   context "doubled past" do

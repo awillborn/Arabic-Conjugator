@@ -12,8 +12,10 @@ class FormVIIIPresentBase < Base
   end
 
   def hollow_base
-    @root2 = "ا"
-    @root1 + "ت" + @root2 + @root3
+    @root2 = (FORM_VIII_HOLLOW[@root1+@root2+@root3] ||= "ا")
+    @base =  @root1 + "ت" + @root2 + @root3
+    @base = morphed_taa_base if ["ز", "ذ", "ص", "ض"].include?(@root1)
+    @base
   end
 
   def assimilated_defective_base
