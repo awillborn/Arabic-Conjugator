@@ -32,9 +32,14 @@ describe "Form VIII Past" do
   end
 
   context "defective past" do
-    it 'conjugates form VIII defective past' do
+    it 'conjugates form VIII defective past, :I' do
       verb = Verb.new({root1: "ب", root2: "ل", root3: "ي", form: "8", tense: "past", pronoun: :I})
       expect(verb.conjugate).to eq("ابتليت")
+    end
+
+    it 'conjugates form VIII defective past, :he' do
+      verb = Verb.new({root1: "ب", root2: "ل", root3: "ي", form: "8", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("ابتلى")
     end
 
     it 'conjugates form VIII defective-assimilated past' do

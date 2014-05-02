@@ -102,9 +102,14 @@ describe "Form VIII Present" do
   end
 
   context "defective present" do
-    it 'conjugates form VIII defective present' do
+    it 'conjugates form VIII defective present, you_f' do
       verb = Verb.new({root1: "ب", root2: "ل", root3: "ي", form: "8", tense: "present", pronoun: :you_f})
       expect(verb.conjugate).to eq("تبتلين")
+    end
+
+    it 'conjugates form VIII defective present, he' do
+      verb = Verb.new({root1: "ب", root2: "ل", root3: "ي", form: "8", tense: "present", pronoun: :he})
+      expect(verb.conjugate).to eq("يبتلي")
     end
 
     it 'conjugates form VIII defective-assimilated present' do
