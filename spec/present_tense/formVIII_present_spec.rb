@@ -44,6 +44,11 @@ describe "Form VIII Present" do
       expect(verb.conjugate).to eq("أختار")
     end
 
+    it 'conjugates form VIII hollow present, morphed taa' do
+      verb = Verb.new({root1: "ص", root2: "ي", root3: "د", form: "8", tense: "present", pronoun: :you_m})
+      expect(verb.conjugate).to eq("تصطاد")
+    end
+
     it 'conjugates form VIII hollow present, irregular' do
       verb = Verb.new({root1: "ز", root2: "و", root3: "ج", form: "8", tense: "present", pronoun: :I})
       expect(verb.conjugate).to eq("أزدوج")
