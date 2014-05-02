@@ -59,6 +59,11 @@ describe "Form VIII Past" do
       expect(verb.conjugate).to eq("اختار")
     end
 
+    it 'conjugates form VIII hollow past, morphed taa' do
+      verb = Verb.new({root1: "ص", root2: "ي", root3: "د", form: "8", tense: "past", pronoun: :you_m})
+      expect(verb.conjugate).to eq("اصطدت")
+    end
+
     it 'conjugates form VIII hollow past, irregular' do
       verb = Verb.new({root1: "ز", root2: "و", root3: "ج", form: "8", tense: "past", pronoun: :I})
       expect(verb.conjugate).to eq("ازدوجت")

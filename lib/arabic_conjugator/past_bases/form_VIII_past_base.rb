@@ -10,7 +10,6 @@ class FormVIIIPastBase < Base
   def initialize(verb)
     super
     @base =  "ا" + @root1 + "ت" + @root2 + @root3
-    @base = morphed_taa_base if ["ز", "ذ", "ص", "ض"].include?(@root1)
   end
 
   def regular_base
@@ -26,7 +25,7 @@ class FormVIIIPastBase < Base
     @base =  "ا" + @root1 + "ت" + @root2 + @root3
     @base = morphed_taa_base if ["ز", "ذ", "ص", "ض"].include?(@root1)
     if @root2 == "ا" && ![:he, :she, :they].include?(@pronoun)
-      "ا" + @root1 + "ت" + @root3
+      @base[0..2] + @root3
     else
       @base
     end
