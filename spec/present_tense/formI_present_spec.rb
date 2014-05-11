@@ -98,6 +98,11 @@ describe "Form I Present" do
       expect(verb.conjugate).to eq("يسعى")
     end
 
+    it 'conjugates form I defective present with final root yaa, irregular' do
+      verb = Verb.new({root1: "ن", root2: "س", root3: "ي", form: "1", tense: "present", pronoun: :you_pl})
+      expect(verb.conjugate).to eq("تنسون")
+    end
+
     it 'conjugates form I doubly weak verbs with second radical waaw and final radical yaa' do
       verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يروون")
