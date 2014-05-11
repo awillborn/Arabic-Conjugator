@@ -1,5 +1,6 @@
 # encoding: utf-8
 require_relative '../form_I_hamzated'
+require_relative '../form_I_defective'
 require_relative '../base'
 
 class FormIPastBase < Base
@@ -22,12 +23,12 @@ class FormIPastBase < Base
   end
 
   def defective_base
-    @base = @base[0...-1]
+    base = @base[0...-1]
     if @pronoun == :he
-      return @base + "ا" if (@root3 == "و")
-      @base + "ى"
+      return base + "ا" if (@root3 == "و")
+      base + (FORM_I_DEFECTIVE[@base] ||= "ى")
     else
-      @base
+      base
     end
   end
 

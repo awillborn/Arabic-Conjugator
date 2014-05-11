@@ -37,6 +37,11 @@ describe "Form I Past" do
       expect(verb.conjugate).to eq("دعى")
     end
 
+    it 'conjugates form I defective past with final root yaa, irregular' do
+      verb = Verb.new({root1: "ن", root2: "س", root3: "ي", form: "1", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("نسي")
+    end
+
     it 'conjugates form I doubly weak verbs with second radical waaw and final radical yaa' do
       verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("روى")
