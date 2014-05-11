@@ -1,6 +1,6 @@
 # encoding: utf-8
 require_relative '../form_I_hamzated'
-require_relative '../form_I_defective'
+require_relative '../form_I_defective_past'
 require_relative '../base'
 
 class FormIPastBase < Base

@@ -1,6 +1,7 @@
 # encoding: utf-8
 require_relative '../form_I_hamzated'
 require_relative '../form_I_hollow'
+require_relative '../form_I_defective_present'
 require_relative '../base'
 
 class FormIPresentBase < Base
@@ -24,10 +25,11 @@ class FormIPresentBase < Base
   end
 
   def defective_base
+    base = @base[0...-1]
     if [:you_pl, :they, :you_f].include?(@pronoun)
-      @base[0...-1]
+      base
     else
-      @base
+      base + (FORM_I_DEFECTIVE_PRESENT[@base] ||= @root3)
     end
   end
 
