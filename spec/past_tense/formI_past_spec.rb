@@ -27,9 +27,14 @@ describe "Form I Past" do
   end
 
   context "defective past" do
-    it 'conjugates form I defective past with final root waaw' do
+    it 'conjugates form I defective past with final root waaw, :he' do
       verb = Verb.new({root1: "ش", root2: "ك", root3: "و", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("شكا")
+    end
+
+    it 'conjugates form I defective past with final root waaw, :you_m' do
+      verb = Verb.new({root1: "ش", root2: "ك", root3: "و", form: "1", tense: "past", pronoun: :you_m})
+      expect(verb.conjugate).to eq("شكوت")
     end
 
     it 'conjugates form I defective past with final root yaa' do
