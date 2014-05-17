@@ -1,6 +1,6 @@
 # encoding: utf-8
 require_relative '../form_I_hamzated'
-require_relative '../form_I_hollow'
+require_relative '../form_I_hollow_present'
 require_relative '../form_I_defective_present'
 require_relative '../base'
 
@@ -16,7 +16,7 @@ class FormIPresentBase < Base
   end
 
   def hollow_base
-    @base = @root1 + FORM_I_HOLLOW[@base] + @root3 if FORM_I_HOLLOW[@base]
+    @base = @root1 + FORM_I_HOLLOW_PRESENT[@base] + @root3 if FORM_I_HOLLOW_PRESENT[@base]
     super
   end
 

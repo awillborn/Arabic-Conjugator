@@ -1,6 +1,7 @@
 # encoding: utf-8
 require_relative '../form_I_hamzated'
 require_relative '../form_I_defective_past'
+require_relative '../form_I_hollow_past'
 require_relative '../base'
 
 class FormIPastBase < Base
@@ -15,7 +16,7 @@ class FormIPastBase < Base
       if @root3 == "ئ"
          @root1 + "اء"
       else
-        @root1 + "ا" + @root3
+        @root1 + (FORM_I_HOLLOW_PAST[@base] ||= "ا") + @root3
       end
     else
       @root1 + @root3

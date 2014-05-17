@@ -74,6 +74,11 @@ describe "Form I Past" do
       expect(verb.conjugate).to eq("قلت")
     end
 
+    it 'conjugates form I hollow past, irregular, :he' do
+      verb = Verb.new({root1: "ل", root2: "ي", root3: "س", form: "1", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("ليس")
+    end
+
     it 'conjugates form I hollow past with third radical hamza, :he' do
       verb = Verb.new({root1: "ج", root2: "ي", root3: "ء", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("جاء")
