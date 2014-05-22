@@ -52,22 +52,27 @@ describe "Form I Past" do
       expect(verb.conjugate).to eq("نسي")
     end
 
-    it 'conjugates form I doubly weak verbs with second radical waaw and final radical yaa' do
+    it 'conjugates form I hollow-defective, waaw-yaa' do
       verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("روى")
     end
 
-    it 'conjugates form I doubly weak verbs with first radical waaw and final radical yaa' do
+    it 'conjugates form I hollow-defective, waaw-yaa, irregular' do
+      verb = Verb.new({root1: "س", root2: "و", root3: "ي", form: "1", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("سوي")
+    end
+
+    it 'conjugates form I assimilated-defective, waaw-yaa, :they' do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "1", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("وفوا")
     end
 
-    it 'conjugates form I doubly weak verbs with first radical waaw and final radical yaa' do
+    it 'conjugates form I assimilated-defective, waaw-yaa, :he' do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("وفى")
     end
 
-    it 'conjugates form I doubly weak verbs with first radical waaw and final radical yaa, irregular' do
+    it 'conjugates form I assimilated-defective, waawy-yaa, irregular' do
       verb = Verb.new({root1: "و", root2: "ل", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("ولي")
     end
