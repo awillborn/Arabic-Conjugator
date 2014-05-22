@@ -62,6 +62,11 @@ describe "Form I Past" do
       expect(verb.conjugate).to eq("سوي")
     end
 
+    it 'conjugates form I hollow-defective, yaa-yaa' do
+      verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "1", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("حيي")
+    end
+
     it 'conjugates form I assimilated-defective, waaw-yaa, :they' do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "1", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("وفوا")
