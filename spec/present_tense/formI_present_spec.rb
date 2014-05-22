@@ -108,6 +108,16 @@ describe "Form I Present" do
       expect(verb.conjugate).to eq("يروون")
     end
 
+    it 'conjugates form I hollow-defective, waaw-yaa' do
+      verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تروي")
+    end
+
+    it 'conjugates form I hollow-defective, waaw-yaa, irregular' do
+      verb = Verb.new({root1: "س", root2: "و", root3: "ي", form: "1", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تسوى")
+    end
+
     it 'conjugates form I hollow-defective, yaa-yaa' do
       verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "1", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تحيا")
@@ -118,5 +128,4 @@ describe "Form I Present" do
       expect(verb.conjugate).to eq("يفون")
     end
   end
-
 end
