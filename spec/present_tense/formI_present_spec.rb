@@ -103,12 +103,17 @@ describe "Form I Present" do
       expect(verb.conjugate).to eq("تنسون")
     end
 
-    it 'conjugates form I doubly weak verbs with second radical waaw and final radical yaa' do
+    it 'conjugates form I hollow-defective, waaw-yaa' do
       verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يروون")
     end
 
-    it 'conjugates form I doubly weak verbs with first radical waaw and final radical yaa' do
+    it 'conjugates form I hollow-defective, yaa-yaa' do
+      verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "1", tense: "present", pronoun: :she})
+      expect(verb.conjugate).to eq("تحيا")
+    end
+
+    it 'conjugates form I assimilated-defective, waaw-yaa' do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "1", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يفون")
     end
