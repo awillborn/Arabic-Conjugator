@@ -127,5 +127,10 @@ describe "Form I Present" do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "1", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يفون")
     end
+
+    it 'conjugates form I hamzated-defective, second radical hamza' do 
+      verb = Verb.new({root1: "ر", root2: "ء", root3: "ي", form: "1", tense: "present", pronoun: :he})
+      expect(verb.conjugate).to eq("يرى")
+    end
   end
 end

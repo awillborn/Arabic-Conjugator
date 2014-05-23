@@ -1,5 +1,5 @@
 # encoding: utf-8
-require_relative '../form_I_hamzated'
+require_relative '../form_I_hamzated_present'
 require_relative '../form_I_hollow_present'
 require_relative '../form_I_defective_present'
 require_relative '../base'
@@ -43,12 +43,12 @@ class FormIPresentBase < Base
 
   def adjust_second_radical
     base = @root1 + @root2 + @root3
-    @root2 = FORM_I_HAMZATED[base]
+    @root2 = FORM_I_HAMZATED_PRESENT[base]
   end
 
   def adjust_third_radical
     base = @root1 + @root2 + @root3
-    @root3 = FORM_I_HAMZATED[base]
+    @root3 = FORM_I_HAMZATED_PRESENT[base]
   end
 
 end
