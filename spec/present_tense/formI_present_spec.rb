@@ -65,10 +65,17 @@ describe "Form I Present" do
       verb = Verb.new({root1: "ن", root2: "و", root3: "م", form: "1", tense: "present", pronoun: :you_m})
       expect(verb.conjugate).to eq("تنام")
     end
+  end
 
-    it 'conjugates form I hollow present with third radical hamza, :he' do
+  context 'hollow-hamzated' do
+    it 'conjugates form I hollow-hamzated, :he' do
       verb = Verb.new({root1: "ج", root2: "ي", root3: "ء", form: "1", tense: "present", pronoun: :I})
         expect(verb.conjugate).to eq("أجيئ")
+    end
+
+    it 'conjugates form I hollow-hamzated, :you_pl' do
+      verb = Verb.new({root1: "ج", root2: "ي", root3: "ء", form: "1", tense: "present", pronoun: :you_pl})
+        expect(verb.conjugate).to eq("تجيئون")
     end
   end
 
