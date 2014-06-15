@@ -79,8 +79,8 @@ describe "Form I Present" do
     end
 
     it 'conjugates form I defective present with final root waaw, pronoun :he' do
-      verb = Verb.new({root1: "ش", root2: "ك", root3: "و", form: "1", tense: "present", pronoun: :they})
-      expect(verb.conjugate).to eq("يشكون")
+      verb = Verb.new({root1: "ش", root2: "ك", root3: "و", form: "1", tense: "present", pronoun: :he})
+      expect(verb.conjugate).to eq("يشكو")
     end
 
     it 'conjugates form I defective present with final root yaa, :we' do
@@ -103,12 +103,12 @@ describe "Form I Present" do
       expect(verb.conjugate).to eq("تنسون")
     end
 
-    it 'conjugates form I hollow-defective, waaw-yaa' do
+    it 'conjugates form I hollow-defective, waaw-yaa, :they' do
       verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "present", pronoun: :they})
       expect(verb.conjugate).to eq("يروون")
     end
 
-    it 'conjugates form I hollow-defective, waaw-yaa' do
+    it 'conjugates form I hollow-defective, waaw-yaa, :she' do
       verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "present", pronoun: :she})
       expect(verb.conjugate).to eq("تروي")
     end

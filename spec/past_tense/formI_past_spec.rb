@@ -37,6 +37,11 @@ describe "Form I Past" do
       expect(verb.conjugate).to eq("شكوت")
     end
 
+    it 'conjugates form I defective past, final root waaw, irregular' do
+      verb = Verb.new({root1: "ر", root2: "ض", root3: "و", form: "1", tense: "past", pronoun: :he})
+      expect(verb.conjugate).to eq("رضى")
+    end
+
     it 'conjugates form I defective past with final root yaa' do
       verb = Verb.new({root1: "د", root2: "ع", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("دعى")
@@ -51,7 +56,9 @@ describe "Form I Past" do
       verb = Verb.new({root1: "ن", root2: "س", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("نسي")
     end
+  end
 
+  context "hollow-defective past" do
     it 'conjugates form I hollow-defective, waaw-yaa' do
       verb = Verb.new({root1: "ر", root2: "و", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("روى")
@@ -66,7 +73,9 @@ describe "Form I Past" do
       verb = Verb.new({root1: "ح", root2: "ي", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("حيي")
     end
+  end
 
+  context 'assimilated-defective past' do 
     it 'conjugates form I assimilated-defective, waaw-yaa, :they' do
       verb = Verb.new({root1: "و", root2: "ف", root3: "ي", form: "1", tense: "past", pronoun: :they})
       expect(verb.conjugate).to eq("وفوا")
@@ -81,12 +90,15 @@ describe "Form I Past" do
       verb = Verb.new({root1: "و", root2: "ل", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("ولي")
     end
+  end
 
+  context 'hamzated-defective past' do 
     it 'conjugates form I hamzated-defective, second radical hamza' do 
       verb = Verb.new({root1: "ر", root2: "ء", root3: "ي", form: "1", tense: "past", pronoun: :he})
       expect(verb.conjugate).to eq("رأى")
     end
   end
+
 
   context "hollow past" do
     it 'conjugates form I hollow past, :he' do

@@ -26,8 +26,9 @@ class FormIPastBase < Base
   def defective_base
     base = @base[0...-1]
     if @pronoun == :he
-      return base + "ا" if (@root3 == "و")
-      base + (FORM_I_DEFECTIVE_PAST[@base] ||= "ى")
+      return base + FORM_I_DEFECTIVE_PAST[@base] if FORM_I_DEFECTIVE_PAST[@base]
+      return base + "ا" if @root3 == "و"
+      return base + "ى"
     elsif [:I, :you_m, :you_f, :you_pl].include?(@pronoun)
       @base
     else
