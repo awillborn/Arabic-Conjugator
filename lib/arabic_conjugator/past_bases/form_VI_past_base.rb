@@ -22,11 +22,8 @@ class FormVIPastBase < Base
   end
 
   def calculate_base
-    if @root1 == "آ"
-      "ت" + @root1 + @root2 + @root3
-    else
-      "ت" + @root1 + "ا" + @root2 + @root3
-    end
+    return "ت" + @root1 + @root2 + @root3 if @root1 == "آ"
+    "ت" + @root1 + "ا" + @root2 + @root3
   end
-
 end
+

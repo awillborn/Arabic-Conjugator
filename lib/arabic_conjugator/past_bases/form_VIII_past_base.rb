@@ -13,22 +13,16 @@ class FormVIIIPastBase < Base
   end
 
   def regular_base
-    if @root1 == "ت"
-      "اتّ" + @root2 + @root3
-    else
-      @base
-    end
+    return "اتّ" + @root2 + @root3 if @root1 == "ت"
+    @base
   end
 
   def hollow_base
     @root2 = (FORM_VIII_HOLLOW[@root1+@root2+@root3] ||= "ا")
     @base =  "ا" + @root1 + "ت" + @root2 + @root3
     @base = morphed_taa_base if ["ز", "ذ", "ص", "ض"].include?(@root1)
-    if @root2 == "ا" && ![:he, :she, :they].include?(@pronoun)
-      @base[0..2] + @root3
-    else
-      @base
-    end
+    return @base[0..2] + @root3 if @root2 == "ا" && ![:he, :she, :they].include?(@pronoun)
+    @base
   end
 
   def doubled_base
@@ -38,13 +32,9 @@ class FormVIIIPastBase < Base
 
   def assimilated_defective_base
     @base = "اتّ" + @root2
-    if @pronoun == :he
-      @base + "ى"
-    elsif [:she, :they].include?(@pronoun)
-      @base
-    else
-      @base + "ي"
-    end
+    return @base + "ى" if @pronoun == :he
+    return @base if [:she, :they].include?(@pronoun)
+    @base + "ي"
   end
 
   def assimilated_base
@@ -56,11 +46,8 @@ class FormVIIIPastBase < Base
   end
 
   def morphed_taa_base
-    if ["ز", "ذ"].include?(@root1)
-      "ا" + @root1 + "د" + @root2 + @root3
-    else
-      "ا" + @root1 + "ط" + @root2 + @root3
-    end
+    return "ا" + @root1 + "د" + @root2 + @root3 if ["ز", "ذ"].include?(@root1)
+    "ا" + @root1 + "ط" + @root2 + @root3
   end
 
   def adjust_first_radical
@@ -74,5 +61,4 @@ class FormVIIIPastBase < Base
   def adjust_third_radical
     @root3 = "أ"
   end
-
 end

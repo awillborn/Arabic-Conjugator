@@ -10,19 +10,13 @@ class FormIVPastBase < Base
   end
 
   def hollow_base
-    if [:he, :she, :they].include?(@pronoun)
-      "أ" + @root1 + "ا" + @root3
-    else
-      "أ" + @root1 + @root3
-    end
+    return "أ" + @root1 + "ا" + @root3 if [:he, :she, :they].include?(@pronoun)
+    "أ" + @root1 + @root3
   end
 
   def calculate_base
-    if @root1 == "آ"
-      @root1 + @root2 + @root3
-    else
-      "أ" + @root1 + @root2 + @root3
-    end
+    return @root1 + @root2 + @root3 if @root1 == "آ"
+    "أ" + @root1 + @root2 + @root3
   end
 
   def adjust_first_radical
@@ -34,13 +28,9 @@ class FormIVPastBase < Base
   end
 
   def adjust_third_radical
-    if [:he, :she].include?(@pronoun) && ["و", "ي"].include?(@root2)
-      @root3 = "ء"
-    elsif @pronoun == :they
-      @root3 = "ؤ"
-    else
-      @root3 = "أ"
-    end
+    return @root3 = "ء" if [:he, :she].include?(@pronoun) && ["و", "ي"].include?(@root2)
+    return @root3 = "ؤ" if @pronoun == :they
+    @root3 = "أ"
   end
 
 end

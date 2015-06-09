@@ -55,5 +55,4 @@ class TypeFactory
   def morphed_taa?
     @form == "8" && ["ذ", "ز", "ص", "ض"].include?(@root1)
   end
-
 end

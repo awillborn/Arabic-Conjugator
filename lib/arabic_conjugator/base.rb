@@ -11,28 +11,21 @@ class Base
     @root2 = verb.root2
     @root3 = verb.root3
     @pronoun = verb.pronoun
-    adjust_first_radical if @root1 == "ء"
+    adjust_first_radical  if @root1 == "ء"
     adjust_second_radical if @root2 == "ء"
-    adjust_third_radical if @root3 == "ء"
+    adjust_third_radical  if @root3 == "ء"
   end
 
   def regular_base
-    if @root3 == "أ" && @pronoun == :they
-      @base[0...-1] + "ؤ"
-    else
-      @base
-    end
+    return @base[0...-1] + "ؤ" if @root3 == "أ" && @pronoun == :they
+    @base
   end
 
   def defective_base
     @base = @base[0...-1]
-    if @pronoun == :he
-      @base + "ى"
-    elsif [:she, :they].include?(@pronoun)
-      @base
-    else
-      @base + "ي"
-    end
+    return @base + "ى" if @pronoun == :he
+    return @base if [:she, :they].include?(@pronoun)
+    @base + "ي"
   end
 
   def assimilated_base
@@ -40,19 +33,13 @@ class Base
   end
 
   def hollow_base
-    if @root3 == "أ" && @pronoun == :they
-      @base[0...-1] + "ؤ"
-    else
-      @base
-    end
+    return @base[0...-1] + "ؤ" if @root3 == "أ" && @pronoun == :they
+    @base
   end
 
   def doubled_base
-    if [:he, :she, :they].include?(@pronoun)
-      @base[0...-1] + "ّ"
-    else
-      @base
-    end
+    return @base[0...-1] + "ّ" if [:he, :she, :they].include?(@pronoun)
+    @base
   end
 
   def assimilated_defective_base
@@ -66,5 +53,4 @@ class Base
   def adjust_first_radical
     @root1 = "أ"
   end
-
 end

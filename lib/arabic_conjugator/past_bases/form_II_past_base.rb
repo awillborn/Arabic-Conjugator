@@ -16,13 +16,9 @@ class FormIIPastBase < Base
   def hollow_defective_base
     @base = @base[0...-1]
     roots = @root1 + @root2 + @root3
-    if @pronoun == :he
-      @base + FORM_II_HOLLOW_DEFECTIVE[roots]
-    elsif [:she, :they].include?(@pronoun)
-      @base
-    else
-      @base + "ي"
-    end
+    return @base + FORM_II_HOLLOW_DEFECTIVE[roots] if @pronoun == :he
+    return @base if [:she, :they].include?(@pronoun)
+    @base + "ي"
   end
 
   def adjust_second_radical

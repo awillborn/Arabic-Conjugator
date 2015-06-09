@@ -1,17 +1,12 @@
 #coding: UTF-8
-
 require_relative 'arabic_conjugator/version'
 require_relative 'arabic_conjugator/factories/type_factory'
 require_relative 'arabic_conjugator/factories/base_factory'
-require_relative 'arabic_conjugator/factories/tense_factory'
-require_relative 'arabic_conjugator/past_tense'
-require_relative 'arabic_conjugator/present_tense'
 
 class Verb
   attr_reader :root1, :root2, :root3, :tense, :types, :form, :base, :opts, :pronoun
 
   def initialize(opts)
-    @opts = opts
     @root1 = opts[:root1]
     @root2 = opts[:root2]
     @root3 = opts[:root3]
@@ -30,14 +25,9 @@ class Verb
     BaseFactory.new(self).load_base
   end
 
-  def find_tense
-    TenseFactory.new(self).create_tense
-  end
-
   def conjugate
-    @tense = find_tense
-    @tense.conjugate
+    return @base + PAST_AFFIXES[@pronoun] if @tense == 'past'
+    PRESENT_AFFIXES[@pronoun][0] + @base + PRESENT_AFFIXES[@pronoun][1]
   end
-
 end
 

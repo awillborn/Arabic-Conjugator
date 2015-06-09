@@ -17,7 +17,6 @@ require_relative '../present_bases/form_VII_present_base'
 require_relative '../present_bases/form_VIII_present_base'
 require_relative '../present_bases/form_X_present_base'
 
-
 class BaseFactory
   FORM_MAPPING = {
     "1past" => FormIPastBase,
@@ -43,7 +42,7 @@ class BaseFactory
   def initialize(verb)
     @verb = verb
     @form_name = verb.form
-    @tense = verb.opts[:tense]
+    @tense = verb.tense
     @types = verb.types[0]
   end
 

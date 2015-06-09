@@ -13,11 +13,8 @@ class FormIPastBase < Base
 
   def hollow_base
     if [:he, :she, :they].include?(@pronoun)
-      if @root3 == "ئ"
-         @root1 + "اء"
-      else
-        @root1 + (FORM_I_HOLLOW_PAST[@base] ||= "ا") + @root3
-      end
+      return @root1 + "اء" if @root3 == "ئ"
+      @root1 + (FORM_I_HOLLOW_PAST[@base] ||= "ا") + @root3
     else
       @root1 + @root3
     end
@@ -37,11 +34,8 @@ class FormIPastBase < Base
   end
 
   def doubled_base
-    if [:he, :she, :they].include?(@pronoun)
-      @base[0...-1] + "ّ"
-    else
-      @base
-    end
+    return @base[0...-1] + "ّ" if [:he, :she, :they].include?(@pronoun)
+    @base
   end
 
   def adjust_second_radical
@@ -53,5 +47,4 @@ class FormIPastBase < Base
     base = @root1 + @root2 + @root3
     @root3 = FORM_I_HAMZATED_PAST[base]
   end
-
 end

@@ -11,22 +11,15 @@ class FormXPastBase < Base
 
   def hollow_base
     @root2 = "ا"
-    if [:he, :she, :they].include?(@pronoun)
-      @base
-    else
-      "است" + @root1 + @root3
-    end
+    return @base if [:he, :she, :they].include?(@pronoun)
+    "است" + @root1 + @root3
   end
 
   def hollow_defective_base
     @base = @base[0...-1]
-    if @pronoun == :he
-      @base + "ا"
-    elsif [:she, :they].include?(@pronoun)
-      @base
-    else
-      @base + "ي"
-    end
+    return @base + "ا" if @pronoun == :he
+    return @base if [:she, :they].include?(@pronoun)
+    @base + "ي"
   end
 
   def adjust_second_radical
@@ -36,5 +29,4 @@ class FormXPastBase < Base
   def adjust_third_radical
     @root3 = "أ"
   end
-
 end

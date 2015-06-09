@@ -10,13 +10,9 @@ class FormIIIPastBase < Base
   end
 
   def defective_base
-    if @root3 == "و" && @pronoun == :he
-      @base[0...-1] + "ا"
-    elsif @root3 == "ي" && @pronoun == :he
-      @base[0...-1] + "ى"
-    else
-      @base
-    end
+    return @base[0...-1] + "ا" if @root3 == "و" && @pronoun == :he
+    return @base[0...-1] + "ى" if @root3 == "ي" && @pronoun == :he
+    @base
   end
 
   def adjust_first_radical
@@ -32,11 +28,7 @@ class FormIIIPastBase < Base
   end
 
   def calculate_base
-    if @root1 == "آ"
-      @root1 + @root2 + @root3
-    else
-      @root1 + "ا" + @root2 + @root3
-    end
+    return @root1 + @root2 + @root3 if @root1 == "آ"
+    @root1 + "ا" + @root2 + @root3
   end
-
 end

@@ -12,11 +12,8 @@ class FormVIIPastBase < Base
   def hollow_base
     @root2 = "ا"
     @base = "ان" + @root1 + @root2 + @root3
-    if [:he, :she, :they].include?(@pronoun)
-      @base
-    else
-      "ان" + @root1 + @root3
-    end
+    return @base if [:he, :she, :they].include?(@pronoun)
+    "ان" + @root1 + @root3
   end
 
   def adjust_third_radical
