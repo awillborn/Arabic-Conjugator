@@ -13,14 +13,14 @@ class TypeFactory
   def load_types
     types = []
     types << "assimilated defective" if assimilated_defective?
-    types << "hollow defective" if hollow_defective?
-    types << "defective" if defective?
-    types << "hollow" if hollow?
-    types << "doubled" if doubled?
-    types << "assimilated" if assimilated?
-    types << "assimilated_taa" if assimilated_taa?
-    types << "morphed_taa" if morphed_taa?
-    types << "regular" if types.empty?
+    types << "hollow defective"      if hollow_defective?
+    types << "defective"             if defective?
+    types << "hollow"                if hollow?
+    types << "doubled"               if doubled?
+    types << "assimilated"           if assimilated?
+    types << "assimilated_taa"       if assimilated_taa?
+    types << "morphed_taa"           if morphed_taa?
+    types << "regular"               if types.empty?
     types
   end
 

@@ -8,11 +8,8 @@ class FormIIIPresentBase < Base
   end
 
   def defective_base
-    if [:you_pl, :they, :you_f].include?(@pronoun)
-      @base[0...-1]
-    else
-      @base[0...-1] + "ي"
-    end
+    return @base[0...-1] if [:you_pl, :they, :you_f].include?(@pronoun)
+    @base[0...-1] + "ي"
   end
 
   def adjust_first_radical
@@ -26,5 +23,4 @@ class FormIIIPresentBase < Base
   def adjust_third_radical
     @root3 = "ئ"
   end
-
 end

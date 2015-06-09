@@ -20,19 +20,13 @@ class FormVIIIPresentBase < Base
 
   def assimilated_defective_base
     @base = "تّ" + @root2 + @root3
-    if [:you_f, :you_pl, :they].include?(@pronoun)
-      @base[0...-1]
-    else
-      @base[0...-1] + "ي"
-    end
+    return @base[0...-1] if [:you_f, :you_pl, :they].include?(@pronoun)
+    @base[0...-1] + "ي"
   end
 
   def defective_base
-    if [:you_f, :you_pl, :they].include?(@pronoun)
-      @base[0...-1]
-    else
-      @base[0...-1] + "ي"
-    end
+    return @base[0...-1] if [:you_f, :you_pl, :they].include?(@pronoun)
+    @base[0...-1] + "ي"
   end
 
   def assimilated_base
@@ -49,11 +43,8 @@ class FormVIIIPresentBase < Base
   end
 
   def morphed_taa_base
-    if ["ز", "ذ"].include?(@root1)
-      @root1 + "د" + @root2 + @root3
-    else
-      @root1 + "ط" + @root2 + @root3
-    end
+    return @root1 + "د" + @root2 + @root3 if ["ز", "ذ"].include?(@root1)
+    @root1 + "ط" + @root2 + @root3
   end
 
   def adjust_second_radical
@@ -63,5 +54,4 @@ class FormVIIIPresentBase < Base
   def adjust_third_radical
     @root3 = "ئ"
   end
-
 end

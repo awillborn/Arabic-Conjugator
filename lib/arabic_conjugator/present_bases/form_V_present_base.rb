@@ -12,11 +12,8 @@ class FormVPresentBase < Base
   end
 
   def defective_base
-    if [:you_f, :you_pl, :they].include?(@pronoun)
-      @base[0...-1]
-    else
-      @base[0...-1] + "ى"
-    end
+    return @base[0...-1] if [:you_f, :you_pl, :they].include?(@pronoun)
+    @base[0...-1] + "ى"
   end
 
   def adjust_second_radical

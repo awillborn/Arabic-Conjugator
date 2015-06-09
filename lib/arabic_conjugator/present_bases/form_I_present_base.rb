@@ -26,19 +26,13 @@ class FormIPresentBase < Base
 
   def defective_base
     base = @base[0...-1]
-    if [:you_pl, :they, :you_f].include?(@pronoun)
-      base
-    else
-      base + (FORM_I_DEFECTIVE_PRESENT[@base] ||= @root3)
-    end
+    return base if [:you_pl, :they, :you_f].include?(@pronoun)
+    base + (FORM_I_DEFECTIVE_PRESENT[@base] ||= @root3)
   end
 
   def assimilated_defective_base
-    if [:you_pl, :they, :you_f].include?(@pronoun)
-      @root2
-    else
-      @root2 + @root3
-    end
+    return @root2 if [:you_pl, :they, :you_f].include?(@pronoun)
+    @root2 + @root3
   end
 
   def adjust_second_radical
@@ -50,5 +44,4 @@ class FormIPresentBase < Base
     base = @root1 + @root2 + @root3
     @root3 = FORM_I_HAMZATED_PRESENT[base]
   end
-
 end

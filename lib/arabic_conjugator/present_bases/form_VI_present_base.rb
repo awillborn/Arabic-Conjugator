@@ -11,11 +11,8 @@ class FormVIPresentBase < Base
   end
 
   def defective_base
-    if [:you_f, :you_pl, :they].include?(@pronoun)
-      @base[0...-1]
-    else
-      @base[0...-1] + "ى"
-    end
+    return @base[0...-1] if [:you_f, :you_pl, :they].include?(@pronoun)
+    @base[0...-1] + "ى"
   end
 
   def adjust_first_radical
@@ -27,21 +24,14 @@ class FormVIPresentBase < Base
   end
 
   def adjust_third_radical
-    if [:they, :you_pl].include?(@pronoun)
-      @root3 = "ؤ"
-    elsif @pronoun == :you_f
-      @root3 == "ئ"
-    else
-      @root3 == "أ"
-    end
+    return @root3 = "ؤ" if [:they, :you_pl].include?(@pronoun)
+    return @root3 == "ئ" if @pronoun == :you_f
+    @root3 == "أ"
   end
 
   def calculate_base
-    if @root1 == "آ"
-      "ت" + @root1 + @root2 + @root3
-    else
-      "ت" + @root1 + "ا" + @root2 + @root3
-    end
+    return "ت" + @root1 + @root2 + @root3 if @root1 == "آ"
+    "ت" + @root1 + "ا" + @root2 + @root3
   end
 
 end

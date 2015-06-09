@@ -17,15 +17,11 @@ class FormVIIPresentBase < Base
   end
 
   def defective_base
-    if [:you_f, :you_pl, :they].include?(@pronoun)
-      @base[0...-1]
-    else
-      @base[0...-1] + "ي"
-    end
+    return @base[0...-1] if [:you_f, :you_pl, :they].include?(@pronoun)
+    @base[0...-1] + "ي"
   end
 
   def adjust_third_radical
     @root3 = "ئ"
   end
-
 end

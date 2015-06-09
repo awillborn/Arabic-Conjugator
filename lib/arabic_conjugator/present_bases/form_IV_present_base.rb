@@ -8,11 +8,8 @@ class FormIVPresentBase < Base
   end
 
   def defective_base
-    if [:you_pl, :they, :you_f].include?(@pronoun)
-      @base[0...-1]
-    else
-      @base
-    end
+    return @base[0...-1] if [:you_pl, :they, :you_f].include?(@pronoun)
+    @base
   end
 
   def assimilated_base
@@ -20,13 +17,9 @@ class FormIVPresentBase < Base
   end
 
   def hollow_base
-    if @root3 == "ئ" && [:I, :you_m, :he, :she, :we].include?(@pronoun)
-      @root1 + "يء"
-    elsif @root3 == "ئ" && [:you_pl, :they].include?(@pronoun)
-      @root1 + "يؤ"
-    else
-      @root1 + "ي" + @root3
-    end
+    return @root1 + "يء" if @root3 == "ئ" && [:I, :you_m, :he, :she, :we].include?(@pronoun)
+    return @root1 + "يؤ" if @root3 == "ئ" && [:you_pl, :they].include?(@pronoun)
+    @root1 + "ي" + @root3
   end
 
   def doubled_base
@@ -44,5 +37,4 @@ class FormIVPresentBase < Base
   def adjust_third_radical
     @root3 = "ئ"
   end
-
 end
