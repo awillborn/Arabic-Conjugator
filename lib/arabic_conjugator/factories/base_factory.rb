@@ -69,5 +69,4 @@ class BaseFactory
       form.morphed_taa_base
     end
   end
-
 end

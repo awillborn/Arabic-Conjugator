@@ -7,12 +7,7 @@ class Verb
   attr_reader :root1, :root2, :root3, :tense, :types, :form, :base, :opts, :pronoun
 
   def initialize(opts)
-    @root1 = opts[:root1]
-    @root2 = opts[:root2]
-    @root3 = opts[:root3]
-    @pronoun = opts[:pronoun]
-    @tense = opts[:tense]
-    @form = opts[:form]
+    opts.each{ |name, value| instance_variable_set("@#{name}", value) }
     @types = find_types
     @base = find_base
   end
