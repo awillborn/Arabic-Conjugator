@@ -4,7 +4,7 @@ require_relative 'arabic_conjugator/factories/type_factory'
 require_relative 'arabic_conjugator/factories/base_factory'
 
 class Verb
-  attr_reader :root1, :root2, :root3, :tense, :types, :form, :base, :opts, :pronoun
+  attr_reader :root1, :root2, :root3, :tense, :types, :form, :base, :pronoun
 
   def initialize(opts)
     opts.each{ |name, value| instance_variable_set("@#{name}", value) }
