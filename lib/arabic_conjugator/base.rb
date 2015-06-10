@@ -6,7 +6,6 @@ PRESENT_AFFIXES = { :I => ["أ", ''], :you_m => ["ت", ''], :you_f => ["ت", "ي
 class Base
 
   def initialize(verb)
-    @types = verb.types[0]
     @root1 = verb.root1
     @root2 = verb.root2
     @root3 = verb.root3
